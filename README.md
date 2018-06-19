@@ -64,6 +64,10 @@
 
 ## 开发调试
 如下命令均在项目根目录下执行。
+### install
+
+     npm i
+
 ### 编译
 
      npm run build
