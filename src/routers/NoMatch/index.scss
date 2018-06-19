@@ -1,0 +1,28 @@
+#react-content {
+  height: 100%;
+  background-color: #fff;
+}
+#page-404 {
+  width: 100%;
+  height: 100%;
+  background: url(https://os.alipayobjects.com/rmsportal/NOAjOBbnYCrNzrW.jpg) no-repeat fixed 50%;
+  background-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+#page-404 section {
+  position: absolute;
+  top: 48%;
+  left: 55%;
+  margin: -103px 0 0 -120px;
+  text-align: center;
+}
+#page-404 h1 {
+  color: #94a5e3;
+  font-size: 120px;
+  font-weight: 500;
+}

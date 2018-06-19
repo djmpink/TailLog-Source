@@ -1,0 +1,143 @@
+.search {
+  &.ant-input-affix-wrapper .ant-input:not(:first-child) {
+    padding-left: 35px;
+  }
+  input {
+    background: #343842;
+    border: 0;
+    color: #888;
+  }
+  ::placeholder {
+    color: #888;
+    margin-left: 20px;
+  }
+}
+
+.group{
+  .ant-select-selection--single{
+    background: #343842;
+    border: 0;
+    color: #888;
+  }
+  .ant-select-selection--multiple{
+    background: #2a2c35;
+    border: 0;
+    color: #888;
+  }
+  .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+    color: #888;
+  }
+  .ant-select-selection--multiple .ant-select-selection__choice{
+    background-color: #94a5e3;
+  }
+}
+
+.anticon.anticon-filter.ant-dropdown-trigger {
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+//分页
+.ant-pagination-item a { //未点击页
+  color: #888;
+}
+
+.ant-pagination-item{
+  border: 0;
+}
+
+.ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
+  border:0;
+  background: #333849;
+}
+
+.ant-pagination.mini .ant-pagination-item { //页块
+  margin: 8px 5px;
+  background: #333849;
+}
+
+.ant-pagination.mini .ant-pagination-prev a:after, .ant-pagination.mini .ant-pagination-next a:after {
+  color: #888;
+}
+
+.ant-pagination.mini .ant-pagination-prev, .ant-pagination.mini .ant-pagination-next {
+  background: #333849;
+  margin: 8px 5px;
+}
+
+.ant-pagination-item-active a, .ant-pagination-item-active:focus a, .ant-pagination-item-active:hover a {
+  color: #7187d7;
+}
+
+.config-table {
+  tr {
+    th {
+      background: rgba(114, 137, 218, 0.13);
+      color: #aaaaaa;
+      text-align: center;
+      font-size: larger;
+      border-radius: 0;
+
+    }
+    td {
+      color: #9199ac;
+      border-color: #343842;
+      text-align: center;
+      font-size: larger;
+    }
+    &:hover {
+      td {
+        background: rgba(52, 56, 66, 0.3);
+      }
+    }
+  }
+
+}
+
+.ant-table-placeholder {
+  font-size: 14px;
+  background: #2a2c35;
+  color: #94a5e3;
+  border-bottom: 1px solid #343842;
+}
+
+.ant-table-row-expand-icon {
+  border: 1px solid rgba(41, 45, 53, 0);
+  background: rgba(41, 45, 53, 0);
+}
+
+tr.ant-table-expanded-row, tr.ant-table-expanded-row:hover {
+  background: #292c34;
+}
+
+.config-list-back-image {
+  width: 300px;
+  height: 300px;
+  background: url('./images/pig1.png') no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+.config-list-back-image2 {
+  width: 300px;
+  height: 300px;
+  background: url('./images/pig2.png') no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+.config-list-back-image3 {
+  width: 300px;
+  height: 300px;
+  background: url('./images/pig3.png') no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+//.ant-table-row:hover{
+//  background: #da3626;
+//}
+.config-list::-webkit-scrollbar {
+  display: none
+}

@@ -1,0 +1,133 @@
+//=======
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 0px;
+  background-color: rgb(62, 67, 78);
+
+}
+
+/*定义滑块 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgba(148, 165, 227, 0.35);
+  //border-color: #36393e;
+  border: 2px solid #36393e;
+}
+
+.ant-cascader-menu {
+  height: 100%
+}
+
+.command-input {
+  &.ant-input-affix-wrapper .ant-input:not(:first-child) {
+    padding-left: 40px;
+  }
+  input {
+    background: transparent;
+    border: 0;
+    color: #ccc;
+  }
+  ::placeholder {
+    color: #aaaaaa;
+  }
+}
+
+.search-input {
+  input {
+    background: transparent;
+    border: 0;
+    color: #ccc;
+  }
+  ::placeholder {
+    color: #aaaaaa;
+    text-align: center;
+  }
+}
+
+.config-list-back-image4 {
+  width: 300px;
+  height: 300px;
+  background: url('./images/pig4.png') no-repeat;
+  background-size: contain;
+  opacity: 0.5;
+}
+
+//如果网格数有变化，请修改这个值
+$current_grid: 23;
+.layout .animatedRow.animateWidth {
+  width: $current_grid / 24 *100%;
+  opacity: 1;
+  padding: 0 1px; //防止左右按钮的左右边显示有问题
+}
+
+.layout-header-second {
+  background-color: transparent;
+  transition: 1s background-color;
+}
+
+.animateColor {
+  background-color: #3E434E;
+}
+
+.animatedRow {
+  transition: 1s all;
+  width: 0;
+  overflow: hidden;
+  opacity: 0;
+}
+.multi-layout{
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
+    background: #292c35;
+    border-color: #292c34;
+    color: #7289da;
+    padding-bottom: 5px;
+  }
+
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab{
+    background: #292c35;
+    border-color: #292c34;
+    color: #888;
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active{
+    color: #94a5e3;
+  }
+
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-ink-bar {
+    visibility: visible;
+  }
+  .ant-tabs-bottom > .ant-tabs-bar {
+    margin-bottom: 0;
+    margin-top: 0px;
+    box-shadow: rgb(18, 18, 18) 0px 0px 8px;
+  }
+  .ant-tabs-bar {
+    border-bottom: 4px solid #353842;
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-nav-wrap {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .ant-tabs-ink-bar{
+    height: 2px;
+  }
+  .ant-tabs-nav-container{
+    margin-bottom: 0px;
+  }
+  .ant-tabs-extra-content{
+    margin-right: 20px;
+  }
+  .ant-tabs-extra-content .ant-tabs-new-tab{
+    color: #ffbf00;
+    border: 1px solid #ffbf00;
+    border-radius: 25px;
+  }
+  .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab:hover .anticon-close{
+    color: #ffbf00;
+  }
+}

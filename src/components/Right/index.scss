@@ -1,0 +1,61 @@
+$rightWidth: 100%;
+.right-detail {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(55, 55, 55, .6);
+  height: 100%;
+  z-index: 1000;
+  .content {
+    box-shadow: 0px 0px 29px #060606;
+    background: #292C34;
+    width: $rightWidth;
+    min-width: 960px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    animation: right-in .35s ease-out;
+    //animation: fade-in;/*动画名称*/
+    //animation-duration: 0.3s;/*动画持续时间*/
+    //-webkit-animation:fade-in 0.5s;/*针对webkit内核*/
+  }
+}
+
+@keyframes right-in {
+  from {
+    right: -$rightWidth;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  /*初始状态 透明度为0*/
+  50% {
+    opacity: 0;
+  }
+  /*过渡状态 透明度为0*/
+  100% {
+    opacity: 1;
+  }
+  /*结束状态 透明度为1*/
+}
+
+@-webkit-keyframes fade-in { /*针对webkit内核*/
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
