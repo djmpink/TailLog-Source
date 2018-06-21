@@ -1,4 +1,4 @@
-const DEMO = "DEMO";
+
 const SHOW_CONFIG_RIGHT = "SHOW_CONFIG_RIGHT";
 const FILL_CURRENT_CONFIG = "FILL_CURRENT_CONFIG";
 const REMOVE_CURRENT_CONFIG = "REMOVE_CURRENT_CONFIG";
@@ -10,11 +10,6 @@ const REMOVE_CURRENT_SSH = "REMOVE_CURRENT_SSH";
 const REMOVE_CURRENT_GROUP = "REMOVE_CURRENT_GROUP";
 const FILL_CURRENT_GROUP = "FILL_CURRENT_GROUP";
 export default {
-    DEMO,
-    demo: (data) => ({
-        type: DEMO,
-        data,
-    }),
     SHOW_CONFIG_RIGHT,
     showConfigRight: (flag) => ({
         type: SHOW_CONFIG_RIGHT,

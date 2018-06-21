@@ -51,7 +51,7 @@ class Logs extends React.Component {
     //高亮关键词
     highLightWords(text, keywords) {
         let index = text.indexOf(keywords);
-        if (~index) {//匹配成功
+        if (index > -1) {//匹配成功
             return (
                 <span style={{flex: 1}}>
                     {text.slice(0, index)}
@@ -383,20 +383,7 @@ class Logs extends React.Component {
     }
 
     prompt = (level, msg) => {
-        ~['info', 'error', 'warning'].indexOf(level) && message[level](msg);
-        // switch (level) {
-        //     case "info":
-        //         message.info(msg);
-        //         break;
-        //     case "error":
-        //         message.error(msg);
-        //         break;
-        //     case "warning":
-        //         message.warning(msg);
-        //         break;
-        //     default:
-        //         return;
-        // }
+        ['info', 'error', 'warning'].indexOf(level) > -1 && message[level](msg);
     };
     animateWidth = () => {
         console.log(this.state.contentHeight);

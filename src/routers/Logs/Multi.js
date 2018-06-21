@@ -66,6 +66,7 @@ class Multi extends React.Component {
             //this.refs[log``]
             console.log(nextProps.currentConfig);
             const key = "1";
+            // eslint-disable-next-line
             this.state.panes && (this.state.panes[0]=({
                 title: nextProps.currentConfig.info.name,
                 key: key,
