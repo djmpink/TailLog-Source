@@ -82,7 +82,7 @@
 
 1. package.json中设置：`"DEV": true,`
 2. 第一个命令行窗口执行：`npm start`
-3. 第二个命令行窗口执行：`electron .`
+3. 第二个命令行窗口执行：`electron .` 或者直接执行`node scripts/main`
 
 ## 打包成客户端
 1. package.json中设置：`"DEV": false,`
