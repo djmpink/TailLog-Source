@@ -2,14 +2,6 @@ import {combineReducers} from "redux";
 import actions from "../actions";
 import AjaxAction from "../actions/AjaxAction";
 
-let demo = (state = "", action) => {
-    switch (action.type) {
-        case actions.DEMO:
-            return action.data;
-        default:
-            return state;
-    }
-};
 //所有显示层的东西
 let ui = (state = {}, action) => {
     switch (action.type) {
@@ -302,7 +294,6 @@ let globalError = (state = {}, action) => {
 export default combineReducers({
     user,
     ui,
-    demo,
     config,
     configList,
     dropdown,

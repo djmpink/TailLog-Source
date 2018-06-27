@@ -31,20 +31,7 @@ class ConfigHeader extends React.Component {
         router.push(e.key);
     };
     prompt = (level, msg) => {
-        ~['info', 'error', 'warning'].indexOf(level) && message[level](msg);
-        // switch (level) {
-        //     case "info":
-        //         message.info(msg);
-        //         break;
-        //     case "error":
-        //         message.error(msg);
-        //         break;
-        //     case "warning":
-        //         message.warning(msg);
-        //         break;
-        //     default:
-        //         return;
-        // }
+        ['info', 'error', 'warning'].indexOf(level) > -1 && message[level](msg);
     };
 
     render() {

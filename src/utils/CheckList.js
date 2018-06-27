@@ -8,7 +8,7 @@ export  default {
     },
     //手机号码校验
     mobile(text){
-        return /^(13[0-9]{9})|(14[0-9])|(18[0-9])|(15[0-9][0-9]{8})$/.test(text);
+        return /^(1\d{10})$/.test(text);
     },
     // 身份证校验
     identity(text){

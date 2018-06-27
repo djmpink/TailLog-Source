@@ -25,7 +25,7 @@
     "test": "node scripts/test.js --env=jsdom",
     "mac-full":"npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg":"electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
-    "mac-pack": "electron-packager ./ --electron-version=1.7.8 --platform=darwin --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public ",
+    "mac-pack": "electron-packager ./ --electron-version=1.7.8 --platform=darwin --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public",
     "win-pack": "electron-packager ./ --electron-version=2.0.2 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public"
   },
   "jest": {

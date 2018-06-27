@@ -40,7 +40,9 @@ QQ交流群：455735429
        
     * Windows环境
     
-        因为win上没有C相关编译环境，而该工程需要安装Node-sass，该模块需要编译环境（linux系环境可忽略）
+        因为win上没有C相关编译环境（linux系环境可忽略），而该工程需要安装node-sass，该模块需要编译环境
+
+        你可以通过以下命令设置node-sass的已编译好的文件[推荐]，或者参考后文提到的编译环境部分来设置本地的编译环境
         
         `npm config set sass-binary-site=http://npm.taobao.org/mirrors/node-sass`
    
@@ -56,9 +58,9 @@ QQ交流群：455735429
     * 或者你可以考虑使用`cnpm i`（如果没有安装cnpm，请先执行`npm i -g cnpm`），该命令不推荐在mac上执行，测试发现可能会出现一些意外问题
     
     * electron环境
-        * 请全局安装electron：正常情况下应该直接执行`npm i -g electron`，但是因为国内环境问题，推荐下面的步骤：
+        * 请全局安装electron：正常情况下应该直接执行`npm i -g electron`，但是因为国内环境问题，推荐下面的步骤（以win为例）：
         
-        1. 推荐使用[淘宝镜像](https://npm.taobao.org/mirrors/electron/)找到适合自己的版本：
+        1. 使用[淘宝镜像](https://npm.taobao.org/mirrors/electron/)找到适合自己的版本：
             
             下载[v2.0.2-win32-x64](https://npm.taobao.org/mirrors/electron/2.0.2/electron-v2.0.2-win32-x64.zip)即可
         
@@ -88,7 +90,7 @@ QQ交流群：455735429
 
 1. package.json中设置：`"DEV": true,`
 2. 第一个命令行窗口执行：`npm start`
-3. 第二个命令行窗口执行：`electron .`
+3. 第二个命令行窗口执行：`electron .` 或者直接执行`node scripts/main`
 
 ## 打包成客户端
 1. package.json中设置：`"DEV": false,`

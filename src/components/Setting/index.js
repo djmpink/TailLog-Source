@@ -2,6 +2,11 @@ import React from "react";
 import {connect} from "react-redux";
 import {Button, Dropdown, Icon, Menu, message, Upload} from "antd";
 import AjaxAction from "../../actions/AjaxAction";
+const styles = {
+    iconStyle:{
+        fontSize: 12, margin: "0 10px"
+    }
+}
 
 const props = {
     name: 'file',
@@ -96,11 +101,11 @@ class Setting extends React.Component {
                 overlay={
                     token ? <Menu onClick={this.setting}>
                         <Menu.Item style={{width: 100}} key="userSetting">
-                            <Icon type="setting" style={{fontSize: 12, margin: "0 10px"}}/>
+                            <Icon type="setting" style={styles.iconStyle}/>
                             <span>设置</span>
                         </Menu.Item>
                         <Menu.Item style={{width: 100}} key="help">
-                            <Icon type="question-circle-o" style={{fontSize: 12, margin: "0 10px"}}/>
+                            <Icon type="question-circle-o" style={styles.iconStyle}/>
                             <span>
                                 <a href="http://www.taillog.cn/help.html" target="_blank"
                                    rel="noopener noreferrer">帮助</a>
@@ -108,24 +113,24 @@ class Setting extends React.Component {
                         </Menu.Item>
                         <Menu.Divider/>
                         <Menu.Item style={{width: 100}} key="logout">
-                            <Icon type="logout" style={{fontSize: 12, margin: "0 10px"}}/> <span>退出</span>
+                            <Icon type="logout" style={styles.iconStyle}/> <span>退出</span>
                         </Menu.Item>
 
                     </Menu>
                         :
                         <Menu onClick={this.setting}>
                             <Menu.Item style={{width: 100}} key="export">
-                                <Icon type="export" style={{fontSize: 12, margin: "0 10px"}}/>
+                                <Icon type="export" style={styles.iconStyle}/>
                                 <span>导出</span>
                             </Menu.Item>
                             <Menu.Item style={{width: 100}} key="import">
                                 <Upload {...props}>
-                                    <Icon type="upload" style={{fontSize: 12, margin: "0 10px"}}/>
+                                    <Icon type="upload" style={styles.iconStyle}/>
                                     <span>导入</span>
                                 </Upload>
                             </Menu.Item>
                             <Menu.Item style={{width: 100}} key="help">
-                                <Icon type="question-circle-o" style={{fontSize: 12, margin: "0 10px"}}/>
+                                <Icon type="question-circle-o" style={styles.iconStyle}/>
                                 <span>
                                 <a href="http://www.taillog.cn/help.html" target="_blank"
                                    rel="noopener noreferrer">帮助</a>
@@ -133,7 +138,7 @@ class Setting extends React.Component {
                             </Menu.Item>
                             <Menu.Divider/>
                             <Menu.Item style={{width: 100}} key="login">
-                                <Icon type="login" style={{fontSize: 12, margin: "0 10px"}}/> <span>登录</span>
+                                <Icon type="login" style={styles.iconStyle}/> <span>登录</span>
                             </Menu.Item>
                         </Menu>
 

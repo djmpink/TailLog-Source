@@ -4,7 +4,7 @@ import {Breadcrumb, Button, Col, Icon, Row, Tabs} from "antd";
 import Right from "../Right";
 import AgentSource from "./Agent";
 import SShSource from "./SSH";
-import GroupSrurce from "./Group";
+import GroupSource from "./Group";
 import "./index.scss";
 
 const TabPane = Tabs.TabPane;
@@ -98,7 +98,7 @@ class Source extends Component {
                                         disabled
                                         tab={<span>分组</span>}
                                         key="1">
-                                        <GroupSrurce closeCallback={this.closeCallback}/>
+                                        <GroupSource closeCallback={this.closeCallback}/>
                                     </TabPane>
                         }
                     </Tabs>

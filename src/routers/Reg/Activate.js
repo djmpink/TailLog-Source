@@ -31,7 +31,7 @@ class Activate extends React.Component {
                         <Row>
                             <Col span={8}/>
                             <Col span={8}>
-                                <Button type="primary" style={{width: "100%"}} onClick={this.dashboard}>登录</Button>
+                                <Button type="primary" style={{width: "100%"}} onClick={()=>{this.props.router.push('/login')}}>登录</Button>
                             </Col>
                             <Col span={8}/>
                         </Row>

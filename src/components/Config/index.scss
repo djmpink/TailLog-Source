@@ -37,15 +37,12 @@
 //=====
 .card-container > .ant-tabs-card > .ant-tabs-content {
   margin-top: -16px;
-  padding: 0px;
+  padding: 0;
   border-left: 0;
   margin-right: 5%;
   > .ant-tabs-tabpane {
     background: #343842;
-    padding-top: 20px;
-    padding-right: 50px;
-    padding-left: 50px;
-    padding-bottom: 40px;
+    padding: 20px 50px 40px;
 
   }
 }
@@ -63,7 +60,7 @@
     height: 50px;
     text-align: center;
     padding-top: 15px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
   .ant-tabs-tab-active {
     border-color: #343842;
@@ -87,7 +84,7 @@
     }
   }
   .ant-card-body {
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
 }
 
