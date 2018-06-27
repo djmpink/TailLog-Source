@@ -10,7 +10,15 @@
 
 同时提供搜索，高亮等辅助等功能，方便快速定位异常，让你更专注于程序开发与维护。
 
-更多信息请查看[介绍](https://github.com/djmpink/TailLog)
+### 更多信息请查看
+
+[TailLog官网](http://taillog.cn/)
+
+[Github](https://github.com/djmpink/TailLog)
+
+[《独立开发一款产品是怎样的体验》](http://7player.cn/2018/06/20/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91%E4%B8%80%E6%AC%BE%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BD%93%E9%AA%8C/)
+
+QQ交流群：455735429
 
 # 工程结构与原理
 ![](images/taillog.png)
@@ -121,4 +129,11 @@ mac上也可以直接执行`npm run mac-full`执行完以上的步骤2-3
         * action
         * index.scss:通用样式
      * main.js 后端主入口   
+     
+## Developers
+
+[七号球员](http://7player.cn/)
+
+[coolguy](https://www.hellocoolguy.com/)
+
 
