@@ -10,6 +10,7 @@ import {
 import { Button, Col, Layout, Menu, message, Row, Tooltip } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import Setting from "../Setting";
+import {withRouter} from "react-router";
 const {Header} = Layout;
 
 
@@ -42,8 +43,7 @@ class ConfigHeader extends React.Component {
     };
 
     render() {
-        const {router} = this.props;
-        const {location} = router;
+        const {location} = this.props;
         let {pathname} = location;
         pathname = pathname.replace('/', '');
         return (
@@ -108,4 +108,4 @@ class ConfigHeader extends React.Component {
     }
 }
 
-export default connect((state) => ({}))(ConfigHeader);
+export default connect((state) => ({}))(withRouter(ConfigHeader));

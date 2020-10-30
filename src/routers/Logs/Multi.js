@@ -100,7 +100,7 @@ class Multi extends React.Component {
                                 <Logs ref={(name) => {
                                     this[`log${pane.key}`] = name
                                 }} key={pane.key} setPane={this.setPane.bind(this, pane.key)}
-                                      router={this.props.router}/>
+                                />
                             </TabPane>)
                     }
                 </Tabs>

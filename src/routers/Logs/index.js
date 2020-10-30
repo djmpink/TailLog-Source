@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import "./logs.scss";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
 
@@ -218,7 +218,7 @@ class Logs extends React.Component {
         }).catch(() => {
 
         });
-        this.props.router.push("/term");
+        this.props.history.push("/term");
     };
 
     //发送Webocket
@@ -602,7 +602,6 @@ class Wrapper extends React.Component{
             return (
                 <Logs {...this.props}
                     key={config.id}
-                      router={this.props.router}
                       setConfig={this.setConfig}
                       changeTabName={this.props.setPane}
                       currentConfig={this.state.currentConfig}/>
@@ -612,7 +611,6 @@ class Wrapper extends React.Component{
         return (
             <Logs {...this.props}
                 key="-1"
-                  router={this.props.router}
                   setConfig={this.setConfig}
                   changeTabName={this.props.setPane}
                   currentConfig={this.state.currentConfig}/>
@@ -621,4 +619,4 @@ class Wrapper extends React.Component{
 }
 export default connect((state) => ({
     dropdown: state.dropdown,
-}),null,null,{ withRef: true })(Wrapper)
+}))(withRouter(Wrapper))

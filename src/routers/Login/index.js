@@ -7,7 +7,7 @@ import { Button, Card, Col, Input, Layout, notification, Row, Spin } from "antd"
 import CopyRight from "../../components/CopyRight";
 import Check from "../../utils/CheckList";
 import AjaxAction from "../../actions/AjaxAction";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import Header from "../../components/Header/Header2";
 import "./index.scss";
 const FormItem = Form.Item;
@@ -96,13 +96,13 @@ class Login extends React.Component {
     };
 
     offLine = () => {
-        this.props.router.push("/config");
+        this.props.history.push("/config");
     };
 
     componentDidMount() {
         let token = localStorage['token'];
         if (typeof(token) !== "undefined") {
-            this.props.router.push("/config");
+            this.props.history.push("/config");
         }
     }
 
@@ -200,4 +200,4 @@ class Login extends React.Component {
     }
 }
 
-export default connect()(Login);
+export default connect()(withRouter(Login));

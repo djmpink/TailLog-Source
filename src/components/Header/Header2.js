@@ -2,12 +2,13 @@ import React from "react";
 import {connect} from "react-redux";
 import {Col, Layout, Row,Badge,Tooltip,Button} from "antd";
 import "./index.scss";
+import {withRouter} from "react-router";
 const {Header} = Layout;
 
 
 class Header2 extends React.Component {
     offLine = () => {
-        this.props.router.push("/config");
+        this.props.history.push("/config");
     };
     render() {
 
@@ -52,4 +53,4 @@ class Header2 extends React.Component {
     }
 }
 
-export default connect()(Header2);
+export default connect()(withRouter(Header2));

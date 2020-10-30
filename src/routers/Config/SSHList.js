@@ -9,6 +9,7 @@ import "./index.scss";
 import Source from "../../components/Source";
 import Header from "../../components/Header";
 import CopyRight from "../../components/CopyRight";
+import {withRouter} from "react-router";
 
 const {Content} = Layout;
 
@@ -86,7 +87,7 @@ class SSHList extends React.Component {
         dispatch(AjaxAction.configSSHDetail(id)).then((data) => {
             if (data.result) {
                 dispatch(actions.fillCurrentSSH(data.data));
-                this.props.router.push("/term");
+                this.props.history.push("/term");
             } else {
                 message.error(data.msg);
             }
@@ -249,4 +250,4 @@ class SSHList extends React.Component {
 }
 export default connect((state) => ({
     sshList: state.sshList,
-}))(SSHList);
+}))(withRouter(SSHList));

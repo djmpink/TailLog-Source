@@ -28,6 +28,7 @@ import "./index.scss";
 import Detail from "../../components/Config";
 import Header from "../../components/Header";
 import CopyRight from "../../components/CopyRight";
+import {withRouter} from "react-router";
 const Option = Select.Option;
 const {Content} = Layout;
 const children = [];
@@ -58,7 +59,7 @@ class Config extends React.Component {
         dispatch(AjaxAction.configDetail(id)).then((data) => {
             if (data.result) {
                 dispatch(actions.fillCurrentConfig(data.data))
-                this.props.router.push("/multi")
+                this.props.history.push("/multi")
 
             } else {
                 message.error(data.msg);
@@ -76,7 +77,7 @@ class Config extends React.Component {
             dispatch(AjaxAction.configSSHDetail(record.sshId)).then((data) => {
                 if (data.result) {
                     dispatch(actions.fillCurrentSSH(data.data));
-                    this.props.router.push("/term");
+                    this.props.history.push("/term");
                 } else {
                     message.error(data.msg);
                 }
@@ -379,4 +380,4 @@ class Config extends React.Component {
 }
 export default connect((state) => ({
     configList: state.configList,
-}))(Config);
+}))(withRouter(Config));
