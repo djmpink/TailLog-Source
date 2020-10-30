@@ -1,6 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Col, Icon, Layout, message, Popconfirm, Row, Table, Tooltip} from "antd";
+import {
+    DeleteOutlined,
+    EditOutlined,
+    ExclamationCircleOutlined,
+    GithubOutlined,
+    PlusOutlined,
+} from '@ant-design/icons';
+import { Button, Col, Layout, message, Popconfirm, Row, Table, Tooltip } from "antd";
 import {listParams} from "../../defaultData";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
@@ -40,13 +47,13 @@ class AgentList extends React.Component {
                 <div className="operations">
                     <Tooltip title="编辑">
                         <Button type="primary" onClick={this.showConfig.bind(this, id, record)} shape="circle"
-                                icon="edit"
+                                icon={<EditOutlined />}
                                 style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                     </Tooltip>
                     <Popconfirm title="删除该配置?" overlayStyle={{background: "#292C34"}}
                                 onConfirm={this.remove.bind(this, id)}>
                         <Tooltip title="删除">
-                            <Button type="primary" shape="circle" icon="delete"
+                            <Button type="primary" shape="circle" icon={<DeleteOutlined />}
                                     style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                         </Tooltip>
                     </Popconfirm>
@@ -174,7 +181,7 @@ class AgentList extends React.Component {
                                             type="primary"
                                             onClick={this.showAddSource.bind(this, 2, null)}
                                             shape="circle"
-                                            icon="plus"
+                                            icon={<PlusOutlined />}
                                             style={{marginRight: 10}}/>
                                     </Tooltip>
                                 </Col>
@@ -183,15 +190,13 @@ class AgentList extends React.Component {
                                     <Tooltip title="说明文档，示例程序" placement="left">
                                         <a href="https://github.com/djmpink/TailLog-Agent" target="_blank"
                                            rel="noopener noreferrer">
-                                            <Icon style={{color: "#00a854"}}
-                                                  type="github"/>
+                                            <GithubOutlined style={{color: "#00a854"}} />
                                         </a>
                                     </Tooltip>
                                 </Col>
                                 <Col span={1} style={{marginTop: 5, float: "right"}}>
                                     <Tooltip title="配置代理信息，「日志管理」中可以通过单独部署的代理程序访问日志" placement="left">
-                                        <Icon style={{color: "#ffbf00"}}
-                                              type="exclamation-circle"/>
+                                        <ExclamationCircleOutlined style={{color: "#ffbf00"}} />
                                     </Tooltip>
                                 </Col>
                                 <Col span={1}/>
@@ -229,7 +234,7 @@ class AgentList extends React.Component {
                     breadcrumb={2}
                     closeSource={this.close}/>
             </Layout>
-        )
+        );
     }
 }
 export default connect((state) => ({

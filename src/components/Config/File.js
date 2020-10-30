@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Icon, Input, Row, Upload} from "antd";
+import { ExclamationCircleOutlined, InboxOutlined, SaveOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, Row, Upload } from "antd";
 
 const FormItem = Form.Item;
 const Dragger = Upload.Dragger;
@@ -67,8 +70,7 @@ class File extends Component {
                         <Row style={{marginBottom: 18, marginTop: -40}}>
                             <Col span={6}/>
                             <Col span={12}>
-                                <Icon style={{color: "#f46e65"}}
-                                      type="exclamation-circle"/><span style={{color:"#f46e65"}}> 该方式（日志文件上传）尚未完全实现。Coming Soon...</span>
+                                <ExclamationCircleOutlined style={{color: "#f46e65"}} /><span style={{color:"#f46e65"}}> 该方式（日志文件上传）尚未完全实现。Coming Soon...</span>
                             </Col>
                             <Col span={6}/>
                         </Row>
@@ -77,7 +79,7 @@ class File extends Component {
                             <div style={{marginTop: 16, height: 180, width: "50%", margin: "0 auto", marginBottom: 0,}}>
                                 <Dragger {...props} fileList={this.state.fileList}>
                                     <p className="ant-upload-drag-icon">
-                                        <Icon type="inbox"/>
+                                        <InboxOutlined />
                                     </p>
                                     <p className="ant-upload-text" style={{color: "#888"}}>点击或拖拽到此处上传文件</p>
                                 </Dragger>
@@ -157,7 +159,7 @@ class File extends Component {
                                 <Button
                                     htmlType="submit"
                                     type="primary"
-                                    icon="save"
+                                    icon={<SaveOutlined />}
                                     style={{width: "30%", fontSize: 14}}
                                     ghost
                                 >

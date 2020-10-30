@@ -1,6 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Col, Icon, Layout, Menu, message, Row, Tooltip} from "antd";
+import {
+    CompassOutlined,
+    FolderOutlined,
+    GlobalOutlined,
+    HomeOutlined,
+    UploadOutlined,
+} from '@ant-design/icons';
+import { Button, Col, Layout, Menu, message, Row, Tooltip } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import Setting from "../Setting";
 const {Header} = Layout;
@@ -53,29 +60,25 @@ class ConfigHeader extends React.Component {
                         >
                             <Menu.Item key="config" style={{background: "#343842", padding: "0 10px"}}>
 
-                                <Icon type="home"
-                                      style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}}/><span
+                                <HomeOutlined style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}} /><span
                                 style={{color: "#94a5e3"}}> 日志管理</span>
 
                             </Menu.Item>
                             <Menu.Item key="ssh" style={{background: "#343842", padding: "0 10px"}}>
 
-                                <Icon type="compass"
-                                      style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}}/><span
+                                <CompassOutlined style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}} /><span
                                 style={{color: "#94a5e3"}}> SSH配置</span>
 
                             </Menu.Item>
                             <Menu.Item key="agent" style={{background: "#343842", padding: "0 10px"}}>
 
-                                <Icon type="global"
-                                      style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}}/><span
+                                <GlobalOutlined style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}} /><span
                                 style={{color: "#94a5e3"}}> 代理配置</span>
 
                             </Menu.Item>
                             <Menu.Item key="group" style={{background: "#343842", padding: "0 10px"}}>
 
-                                <Icon type="folder"
-                                      style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}}/><span
+                                <FolderOutlined style={{fontSize: 12, marginRight: 2, color: "#94a5e3", marginTop: 8}} /><span
                                 style={{color: "#94a5e3"}}> 分组管理</span>
 
                             </Menu.Item>
@@ -91,7 +94,7 @@ class ConfigHeader extends React.Component {
                     </Col>
                     <Col span={1}>
                         <Tooltip title="上传日志" placement="left">
-                            <Button type="primary" size="small" shape="circle" icon="upload" onClick={() => {
+                            <Button type="primary" size="small" shape="circle" icon={<UploadOutlined />} onClick={() => {
                                 this.prompt("warning", "开发中,暂未开放");
                             }}/>
                         </Tooltip>
@@ -101,7 +104,7 @@ class ConfigHeader extends React.Component {
                     </Col>
                 </Row>
             </Header>
-        )
+        );
     }
 }
 

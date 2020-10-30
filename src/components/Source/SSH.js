@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Icon, Input, message, Row, Spin, Tooltip} from "antd";
+import { EyeOutlined, LinkOutlined, SaveOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, message, Row, Spin, Tooltip } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 
 const FormItem = Form.Item;
@@ -176,7 +179,7 @@ class SSH extends Component {
                                                 onChange={this.handleInputChange.bind(this, 'password')}
                                                 suffix={
                                                     <Tooltip title={this.state.password} placement="topRight">
-                                                        <Icon type="eye" style={{color: '#888'}}/>
+                                                        <EyeOutlined style={{color: '#888'}} />
                                                     </Tooltip>}
                                             />
 
@@ -203,7 +206,7 @@ class SSH extends Component {
                                                 onClick={this.handleTestSSH}
                                                 shape="circle"
                                                 type="primary"
-                                                icon="link"
+                                                icon={<LinkOutlined />}
                                                 ghost/>
 
                                         </Tooltip>
@@ -214,7 +217,7 @@ class SSH extends Component {
                                     <Button
                                         htmlType="submit"
                                         type="primary"
-                                        icon="save"
+                                        icon={<SaveOutlined />}
                                         style={{width: "30%", fontSize: 14}}
                                         ghost
                                     >

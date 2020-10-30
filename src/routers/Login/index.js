@@ -1,6 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Icon, Input, Layout, notification, Row, Spin} from "antd";
+import { SmileOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, Layout, notification, Row, Spin } from "antd";
 import CopyRight from "../../components/CopyRight";
 import Check from "../../utils/CheckList";
 import AjaxAction from "../../actions/AjaxAction";
@@ -21,7 +24,7 @@ class Login extends React.Component {
         notification[type]({
             message: <p style={{color: '#94a5e3'}}>{msg} !</p>,
             description: desc,
-            icon: type === "warning" ? null : <Icon type="smile-o" style={{color: '#94a5e3'}}/>,
+            icon: type === "warning" ? null : <SmileOutlined style={{color: '#94a5e3'}} />,
             duration: time,
             style: {
                 width: 300,

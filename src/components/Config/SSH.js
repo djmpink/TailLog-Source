@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Icon, Input, message, Modal, Row, Select, Tooltip, Tree} from "antd";
+import { FolderOpenOutlined, PlusOutlined, SaveOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, message, Modal, Row, Select, Tooltip, Tree } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import Source from "../../components/Source";
 import "./index.scss";
@@ -346,7 +349,7 @@ class SSH extends Component {
                                             onClick={this.showAddSource.bind(this, 1)}
                                             shape="circle"
                                             type="primary"
-                                            icon="plus"
+                                            icon={<PlusOutlined />}
                                             ghost/>
                                     </Tooltip>
                                 </Col>
@@ -385,7 +388,7 @@ class SSH extends Component {
 
                                                 id="path"
                                                 addonBefore="文件路径"
-                                                addonAfter={<Icon type="folder-open" onClick={this.showModal}/> }
+                                                addonAfter={<FolderOpenOutlined onClick={this.showModal} /> }
                                                 value={this.state.path}
                                                 className={'config-form-input'}
                                                 onChange={this.handleInputChange.bind(this, 'path')}
@@ -447,7 +450,7 @@ class SSH extends Component {
                                 <Button
                                     htmlType="submit"
                                     type="primary"
-                                    icon="save"
+                                    icon={<SaveOutlined />}
                                     style={{width: "30%", fontSize: 14}}
                                     ghost
                                 >

@@ -1,7 +1,10 @@
 import React from "react";
 import {connect} from "react-redux";
 import AjaxAction from "../../actions/AjaxAction";
-import {Button, Card, Col, Form, Icon, Input, Layout, notification, Row} from "antd";
+import { CheckCircleOutlined, LeftOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import {Link} from "react-router";
 const FormItem = Form.Item;
 const {Header} = Layout;
@@ -22,7 +25,7 @@ class Pwd extends React.Component {
     openNotification = () => {
         notification.open({
             message: <p style={{color: '#94a5e3'}}>密码修改成功 !</p>,
-            icon: <Icon type="check-circle-o" style={{color: '#009e4a'}}/>,
+            icon: <CheckCircleOutlined style={{color: '#009e4a'}} />,
             duration: 2,
             style: {
                 width: 300,
@@ -66,7 +69,7 @@ class Pwd extends React.Component {
             <Layout className={'layout'}>
                 <Header className={'layout-header'}>
                     <Button
-                        shape="circle" icon="left"
+                        shape="circle" icon={<LeftOutlined />}
                         type="primary"
                         onClick={() => {
                             let {router} = this.props;
@@ -113,7 +116,7 @@ class Pwd extends React.Component {
                 </div>
                 }
             </Layout>
-        )
+        );
     }
 }
 

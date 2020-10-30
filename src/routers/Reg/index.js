@@ -1,6 +1,8 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Input, Layout, message, notification, Row,Spin} from "antd";
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, Layout, message, notification, Row, Spin } from "antd";
 import {Link} from "react-router";
 import Check from "../../utils/CheckList";
 import AjaxAction from "../../actions/AjaxAction";

@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Breadcrumb, Button, Col, Icon, Row, Tabs} from "antd";
+import { CaretRightOutlined, CloseOutlined, EditOutlined, HomeOutlined } from '@ant-design/icons';
+import { Icon as LegacyIcon } from '@ant-design/compatible';
+import { Breadcrumb, Button, Col, Row, Tabs } from "antd";
 import Right from "../Right";
 import AgentSource from "./Agent";
 import SShSource from "./SSH";
@@ -31,27 +33,27 @@ class Source extends Component {
             <div>
                 <Row>
                     <Col span={23}>
-                        <Breadcrumb separator={<Icon type="caret-right"/>}>
+                        <Breadcrumb separator={<CaretRightOutlined />}>
                             <Breadcrumb.Item onClick={this.close} style={{cursor: "pointer",}}>
-                                <Icon type="home" style={{color: '#aaa'}}/>
+                                <HomeOutlined style={{color: '#aaa'}} />
                                 <span style={{color: '#aaa'}}>日志管理</span>
                             </Breadcrumb.Item>
                             {
                                 breadcrumb === 3 ?
                                     <Breadcrumb.Item onClick={this.close} style={{cursor: "pointer",}}>
-                                        <Icon type="edit" style={{color: '#aaa'}}/>
+                                        <EditOutlined style={{color: '#aaa'}} />
                                         <span style={{color: '#aaa'}}>日志配置</span>
                                     </Breadcrumb.Item> : null
                             }
                             <Breadcrumb.Item>
-                                <Icon type={id ? "edit" : "plus"} style={{color: '#aaa'}}/>
+                                <LegacyIcon type={id ? "edit" : "plus"} style={{color: '#aaa'}}/>
                                 <span style={{color: '#aaa'}}>{id ? "编辑" + title : "新建" + title}</span>
                             </Breadcrumb.Item>
                         </Breadcrumb>
                     </Col>
                     <Col span={1}>
                         <Button
-                            shape="circle" icon="close"
+                            shape="circle" icon={<CloseOutlined />}
                             type="primary"
                             ghost
                             onClick={this.close}/>
@@ -59,7 +61,7 @@ class Source extends Component {
                     </Col>
                 </Row>
             </div>
-        )
+        );
     };
 
     close = () => {

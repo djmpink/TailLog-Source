@@ -1,6 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Input, Layout, notification, Row} from "antd";
+import { LeftOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import "../Login/index.scss";
 const {Header} = Layout;
@@ -84,7 +87,7 @@ class Binding extends React.Component {
             <Layout className={'layout'}>
                 <Header className={'layout-header'}>
                     <Button
-                        shape="circle" icon="left"
+                        shape="circle" icon={<LeftOutlined />}
                         type="primary"
                         onClick={() => {
                             let {router} = this.props;
@@ -136,7 +139,7 @@ class Binding extends React.Component {
                     }
                 </div>
             </Layout>
-        )
+        );
     }
 }
 

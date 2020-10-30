@@ -4,7 +4,19 @@ import "./logs.scss";
 import {Link} from "react-router";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
-import {Button, Cascader, Col, Icon, Input, Layout, message, Row, Spin, Switch, Tooltip} from "antd";
+
+import {
+    AppstoreOutlined,
+    CloseCircleOutlined,
+    DownloadOutlined,
+    DownOutlined,
+    LeftCircleOutlined,
+    RetweetOutlined,
+    RightCircleOutlined,
+    SearchOutlined,
+} from '@ant-design/icons';
+
+import { Button, Cascader, Col, Input, Layout, message, Row, Spin, Switch, Tooltip } from "antd";
 import Setting from "../../components/Setting";
 const {Header, Content} = Layout;
 
@@ -399,14 +411,14 @@ class Logs extends React.Component {
     render() {
         const {cmd, search} = this.state;
         const commandInputSuffix = cmd ?
-            <Icon type="close-circle" style={{color: '#ccc'}} onClick={this.emitEmpty}/> : null;
+            <CloseCircleOutlined style={{color: '#ccc'}} onClick={this.emitEmpty} /> : null;
         return (
             <Layout className={'layout'}>
                 <Header className={'layout-header'}>
                     <Row>
                         <Col span={1}>
                             <Link to="config">
-                                <Icon type="appstore-o" style={{fontSize: 16}}/>
+                                <AppstoreOutlined style={{fontSize: 16}} />
                                 {/*<Button  shape="circle" icon="home" />*/}
                             </Link>
                         </Col>
@@ -423,10 +435,11 @@ class Logs extends React.Component {
                             >
                             <span style={{color: '#ccc', fontSize: 14, cursor: "pointer"}}>{this.state.text}
                                 <a>
-                                    <Icon type="down" style={{
-                                        paddingLeft: 10,
-                                        color: '#ccc'
-                                    }}/>
+                                    <DownOutlined
+                                        style={{
+                                            paddingLeft: 10,
+                                            color: '#ccc'
+                                        }} />
                                 </a>
                             </span>
                             </Cascader>
@@ -443,7 +456,7 @@ class Logs extends React.Component {
                         <Col span={3}>
                             <Col span={6}>
                                 <Tooltip title="清空日志" overlayStyle={{opacity: 0.7}}>
-                                    <Button type="primary" size="small" shape="circle" icon="retweet"
+                                    <Button type="primary" size="small" shape="circle" icon={<RetweetOutlined />}
                                             onClick={this.clear}/>
                                 </Tooltip>
                             </Col>
@@ -456,7 +469,7 @@ class Logs extends React.Component {
                             </Col>
                             <Col span={6}>
                                 <Tooltip title="下载日志" overlayStyle={{opacity: 0.7}}>
-                                    <Button type="primary" size="small" shape="circle" icon="download" onClick={() => {
+                                    <Button type="primary" size="small" shape="circle" icon={<DownloadOutlined />} onClick={() => {
                                         this.prompt("warning", "开发中,暂未开放");
                                     }}/>
                                 </Tooltip>
@@ -482,8 +495,8 @@ class Logs extends React.Component {
                                         }}
                                 >
                                     {this.state.animateToRight ?
-                                        <Icon type="left-circle" style={{fontSize: 16, color: '#94a5e3'}}/> :
-                                        <Icon type="right-circle" style={{fontSize: 16, color: '#94a5e3'}}/>
+                                        <LeftCircleOutlined style={{fontSize: 16, color: '#94a5e3'}} /> :
+                                        <RightCircleOutlined style={{fontSize: 16, color: '#94a5e3'}} />
                                     }
                                 </Button>
                             </Tooltip>
@@ -511,7 +524,7 @@ class Logs extends React.Component {
                                 <Col span={4}>
                                     <Input className={'search-input'}
                                            placeholder="搜索/高亮"
-                                           suffix={<Icon type="search" style={{color: '#888'}}/>}
+                                           suffix={<SearchOutlined style={{color: '#888'}} />}
                                            value={search}
                                            onClick={(e) => {
                                                e.stopPropagation()
@@ -559,8 +572,7 @@ class Logs extends React.Component {
 
                 {/*<CopyRight/>*/}
             </Layout>
-
-        )
+        );
     }
 }
 //

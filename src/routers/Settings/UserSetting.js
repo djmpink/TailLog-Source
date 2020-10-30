@@ -1,6 +1,13 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Icon, Input, Layout, notification, Row} from "antd";
+import {
+    CheckCircleOutlined,
+    LeftOutlined,
+    LockOutlined,
+    MailOutlined,
+    UserOutlined,
+} from '@ant-design/icons';
+import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import "../Login/index.scss";
 import {Link} from "react-router";
@@ -38,7 +45,7 @@ class UserSetting extends React.Component {
     openNotification = () => {
         notification.open({
             message: <p style={{color: '#94a5e3'}}>昵称修改成功 !</p>,
-            icon: <Icon type="check-circle-o" style={{color: '#009e4a'}}/>,
+            icon: <CheckCircleOutlined style={{color: '#009e4a'}} />,
             duration: 2,
             style: {
                 width: 300,
@@ -86,7 +93,7 @@ class UserSetting extends React.Component {
             <Layout className={'layout'}>
                 <Header className={'layout-header'}>
                     <Button
-                        shape="circle" icon="left"
+                        shape="circle" icon={<LeftOutlined />}
                         type="primary"
                         onClick={() => {
                             let {router} = this.props;
@@ -100,7 +107,7 @@ class UserSetting extends React.Component {
                         <Row style={{marginTop: 20}}>
 
                             <Col span={2}>
-                                <Icon type="user" style={{fontSize: 16, marginTop: 2, color: "#ccc"}}/>
+                                <UserOutlined style={{fontSize: 16, marginTop: 2, color: "#ccc"}} />
                             </Col>
                             <Col span={4}>
                                 <p style={fontStyle}>昵称:</p>
@@ -137,7 +144,7 @@ class UserSetting extends React.Component {
                         </Row>
                         <Row style={{marginTop: 20}}>
                             <Col span={2}>
-                                <Icon type="mail" style={{fontSize: 16, marginTop: 2, color: "#ccc"}}/>
+                                <MailOutlined style={{fontSize: 16, marginTop: 2, color: "#ccc"}} />
                             </Col>
                             <Col span={4}>
                                 <p style={fontStyle}>邮箱:</p>
@@ -153,7 +160,7 @@ class UserSetting extends React.Component {
                         </Row>
                         <Row style={{marginTop: 20}}>
                             <Col span={2}>
-                                <Icon type="lock" style={{fontSize: 16, marginTop: 2, color: "#ccc"}}/>
+                                <LockOutlined style={{fontSize: 16, marginTop: 2, color: "#ccc"}} />
                             </Col>
                             <Col span={4}>
                                 <p style={fontStyle}>密码:</p>
@@ -170,7 +177,7 @@ class UserSetting extends React.Component {
                     </Card>
                 </div>
             </Layout>
-        )
+        );
     }
 }
 export default connect((state) => {

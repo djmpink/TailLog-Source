@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Col, Layout, message, Popconfirm, Row, Table, Tooltip,Icon} from "antd";
+import { DeleteOutlined, EditOutlined, InfoCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { Button, Col, Layout, message, Popconfirm, Row, Table, Tooltip } from "antd";
 import {listParams} from "../../defaultData";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
@@ -43,13 +44,13 @@ class GroupList extends React.Component {
                 <div className="operations">
                     <Tooltip title="编辑">
                         <Button type="primary" onClick={this.showConfig.bind(this, id, record)} shape="circle"
-                                icon="edit"
+                                icon={<EditOutlined />}
                                 style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                     </Tooltip>
                     <Popconfirm title="删除该配置?" overlayStyle={{background: "#292C34"}}
                                 onConfirm={this.remove.bind(this, id)}>
                         <Tooltip title="删除">
-                            <Button type="primary" shape="circle" icon="delete"
+                            <Button type="primary" shape="circle" icon={<DeleteOutlined />}
                                     style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                         </Tooltip>
                     </Popconfirm>
@@ -175,15 +176,14 @@ class GroupList extends React.Component {
                                             type="primary"
                                             onClick={this.showAddSource.bind(this, 5, null)}
                                             shape="circle"
-                                            icon="plus"
+                                            icon={<PlusOutlined />}
                                             style={{marginRight: 10}}/>
                                     </Tooltip>
                                 </Col>
                                 <Col span={20}/>
                                 <Col span={1} style={{marginTop: 5,float: "right"}}>
                                     <Tooltip title="分组配置，便于对「日志管理」的数据进行分组归类管理" placement="left">
-                                        <Icon style={{color: "#26ad5e"}}
-                                              type="info-circle"/>
+                                        <InfoCircleOutlined style={{color: "#26ad5e"}} />
                                     </Tooltip>
                                 </Col>
                                 <Col span={1}/>
@@ -221,7 +221,7 @@ class GroupList extends React.Component {
                     breadcrumb={2}
                     closeSource={this.close}/>
             </Layout>
-        )
+        );
     }
 }
 export default connect((state) => ({

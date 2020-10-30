@@ -7,7 +7,8 @@ import "./fullscreen.css";
 import {Link} from "react-router";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
-import {Button, Cascader, Col, Icon, Layout, message, Row, Switch, Tooltip} from "antd";
+import { AppstoreOutlined, DownOutlined, PlusCircleOutlined, RetweetOutlined } from '@ant-design/icons';
+import { Button, Cascader, Col, Layout, message, Row, Switch, Tooltip } from "antd";
 import Setting from "../../components/Setting";
 import CopyRight from "../../components/CopyRight";
 import Terminal from "xterm";
@@ -236,7 +237,7 @@ class Term extends React.Component {
                     <Row>
                         <Col span={1}>
                             <Link to="config">
-                                <Icon type="appstore-o" style={{fontSize: 16}}/>
+                                <AppstoreOutlined style={{fontSize: 16}} />
                                 {/*<Button  shape="circle" icon="home" />*/}
                             </Link>
                         </Col>
@@ -253,10 +254,11 @@ class Term extends React.Component {
                             >
                             <span style={{color: '#ccc', fontSize: 14, cursor: "pointer"}}>{this.state.text}
                                 <a>
-                                    <Icon type="down" style={{
-                                        paddingLeft: 10,
-                                        color: '#ccc'
-                                    }}/>
+                                    <DownOutlined
+                                        style={{
+                                            paddingLeft: 10,
+                                            color: '#ccc'
+                                        }} />
                                 </a>
                             </span>
                             </Cascader>
@@ -273,14 +275,14 @@ class Term extends React.Component {
                         <Col span={3}>
                             <Col span={6}>
                                 <Tooltip title="清空" overlayStyle={{opacity: 0.7}}>
-                                    <Button type="primary" size="small" shape="circle" icon="retweet"
+                                    <Button type="primary" size="small" shape="circle" icon={<RetweetOutlined />}
                                             onClick={this.clear}/>
                                 </Tooltip>
                             </Col>
                             <Col span={6}>
                                 <Link to="config">
                                     <Tooltip title="新增配置" overlayStyle={{opacity: 0.7}}>
-                                        <Button type="primary" size="small" shape="circle" icon="plus-circle-o"/>
+                                        <Button type="primary" size="small" shape="circle" icon={<PlusCircleOutlined />}/>
                                     </Tooltip>
                                 </Link>
                             </Col>
@@ -309,8 +311,7 @@ class Term extends React.Component {
 
                 <CopyRight/>
             </Layout>
-
-        )
+        );
     }
 }
 export default connect((state) => ({

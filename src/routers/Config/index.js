@@ -1,6 +1,25 @@
 import React from "react";
 import {connect} from "react-redux";
-import {Button, Col, Icon, Input, Layout, message, Popconfirm, Row, Select, Table, Tooltip} from "antd";
+import {
+    CloseCircleOutlined,
+    DeleteOutlined,
+    EditOutlined,
+    EyeOutlined,
+    PlusOutlined,
+    SearchOutlined,
+} from '@ant-design/icons';
+import {
+    Button,
+    Col,
+    Input,
+    Layout,
+    message,
+    Popconfirm,
+    Row,
+    Select,
+    Table,
+    Tooltip,
+} from "antd";
 import {listParams} from "../../defaultData";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
@@ -253,7 +272,7 @@ class Config extends React.Component {
                     <div className="operations">
                         <Tooltip title="监控">
                             <Button type="primary" onClick={this.monitorLog.bind(this, id, record)} shape="circle"
-                                    icon="eye-o"
+                                    icon={<EyeOutlined />}
                                     style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                         </Tooltip>
                         {/*<Tooltip title="命令行">*/}
@@ -266,13 +285,13 @@ class Config extends React.Component {
                         {/*</Tooltip>*/}
                         <Tooltip title="编辑">
                             <Button type="primary" onClick={this.showConfig.bind(this, id, record)} shape="circle"
-                                    icon="edit"
+                                    icon={<EditOutlined />}
                                     style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                         </Tooltip>
                         <Popconfirm title="删除该配置?" overlayStyle={{background: "#292C34"}}
                                     onConfirm={this.remove.bind(this, id)}>
                             <Tooltip title="删除">
-                                <Button type="primary" shape="circle" icon="delete"
+                                <Button type="primary" shape="circle" icon={<DeleteOutlined />}
                                         style={{marginRight: 10, borderColor: "rgba(114, 137, 218, 0.2)"}} ghost/>
                             </Tooltip>
                         </Popconfirm>
@@ -281,7 +300,7 @@ class Config extends React.Component {
 
 
         const commandInputSuffix = this.state.search ?
-            <Icon type="close-circle" style={{color: '#888'}} onClick={this.emitEmpty}/> : null;
+            <CloseCircleOutlined style={{color: '#888'}} onClick={this.emitEmpty} /> : null;
 
         return (
             <Layout className={'layout'}>
@@ -309,7 +328,7 @@ class Config extends React.Component {
                                             type="primary"
                                             onClick={this.showAddConfig}
                                             shape="circle"
-                                            icon="plus"
+                                            icon={<PlusOutlined />}
                                             style={{marginRight: 10}}/>
                                     </Tooltip>
                                 </Col>
@@ -317,7 +336,7 @@ class Config extends React.Component {
                                 <Col span={4}>
                                     <Input className={'search'}
                                         // placeholder="搜索"
-                                           prefix={<Icon type="search" style={{color: '#7187d7', marginLeft: 5}}/>}
+                                           prefix={<SearchOutlined style={{color: '#7187d7', marginLeft: 5}} />}
                                            suffix={commandInputSuffix}
                                            value={this.state.search}
                                            onChange={this.onChangeSearch}
@@ -355,7 +374,7 @@ class Config extends React.Component {
                 <CopyRight/>
                 <Detail addCallback={this.getList}/>
             </Layout>
-        )
+        );
     }
 }
 export default connect((state) => ({

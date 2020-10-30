@@ -1,6 +1,9 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import {Button, Card, Col, Form, Icon, Input, message, Row, Select, Tooltip} from "antd";
+import { PlusOutlined, QuestionCircleOutlined, SaveOutlined } from '@ant-design/icons';
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, message, Row, Select, Tooltip } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import Source from "../../components/Source";
 const Option = Select.Option;
@@ -197,7 +200,7 @@ class Agent extends Component {
                                             onClick={this.showAddSource.bind(this, 2)}
                                             shape="circle"
                                             type="primary"
-                                            icon="plus"
+                                            icon={<PlusOutlined />}
                                             ghost/>
                                     </Tooltip>
                                 </Col>
@@ -357,14 +360,13 @@ class Agent extends Component {
                                             onClick={this.showAddSource.bind(this, 1)}
                                             shape="circle"
                                             type="primary"
-                                            icon="plus"
+                                            icon={<PlusOutlined />}
                                             ghost/>
                                     </Tooltip>
                                 </Col>
                                 <Col span={1} style={{marginTop: 5}}>
                                     <Tooltip title="如果选择了该配置，则代理程序可以优先使用该配置访问被代理的日志地址" placement="top">
-                                        <Icon style={{color: "#ffbf00"}}
-                                              type="question-circle"/>
+                                        <QuestionCircleOutlined style={{color: "#ffbf00"}} />
                                     </Tooltip>
                                 </Col>
                                 <Col span={9}/>
@@ -373,7 +375,7 @@ class Agent extends Component {
                                 <Button
                                     htmlType="submit"
                                     type="primary"
-                                    icon="save"
+                                    icon={<SaveOutlined />}
                                     style={{width: "30%", fontSize: 14}}
                                     ghost
                                 >

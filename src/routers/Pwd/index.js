@@ -1,7 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
 import AjaxAction from "../../actions/AjaxAction";
-import {Button, Card, Col, Form, Input, Layout, notification, Row} from "antd";
+import { Form } from '@ant-design/compatible';
+import '@ant-design/compatible/assets/index.css';
+import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import {Link} from "react-router";
 import Header from "../../components/Header/Header2";
 const FormItem = Form.Item;
