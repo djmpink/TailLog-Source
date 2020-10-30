@@ -137,6 +137,6 @@ mac上也可以直接执行`npm run mac-full`执行完以上的步骤2-3
 
 [七号球员](http://7player.cn/)
 
-[coolguy](https://www.hellocoolguy.com/)
+[coolguy](https://github.com/coolguy001tv/)
 
 
