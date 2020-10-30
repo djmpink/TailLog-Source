@@ -1,10 +1,15 @@
 .search {
-  &.ant-input-affix-wrapper .ant-input:not(:first-child) {
-    padding-left: 35px;
+
+  &.ant-input-affix-wrapper{
+    background-color: #343842;
+    border:0;
+    ant-input:not(:first-child) {
+      padding-left: 35px;
+
+    }
   }
-  input {
-    background: #343842;
-    border: 0;
+  input.ant-input {
+    background-color: #343842;
     color: #888;
   }
   ::placeholder {
@@ -70,21 +75,20 @@
   color: #7187d7;
 }
 
-.config-table {
+.config-table table{
   tr {
     th {
-      background: rgba(114, 137, 218, 0.13);
+      background: #33374b;
       color: #aaaaaa;
       text-align: center;
-      font-size: larger;
       border-radius: 0;
+      border-bottom: none;
 
     }
     td {
       color: #9199ac;
       border-color: #343842;
       text-align: center;
-      font-size: larger;
     }
     &:hover {
       td {
@@ -95,7 +99,7 @@
 
 }
 
-.ant-table-placeholder {
+.ant-table-empty .ant-table-tbody > tr.ant-table-placeholder {
   font-size: 14px;
   background: #2a2c35;
   color: #94a5e3;
