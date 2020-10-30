@@ -130,6 +130,11 @@ mac上也可以直接执行`npm run mac-full`执行完以上的步骤2-3
         * action
         * index.scss:通用样式
      * main.js 后端主入口   
+
+## 升级日志
+* 升级react/react-dom到17.0.1; node-sass到4.14.1；antd到4.7.3；react-router到5.2.0；react-redux到7.2.2等最新版本
+* 重新采用当前最新的create-react-app进行程序打包，同时使用craco做少量配置
+* 目前样式等正在调试中
      
 ## Developers
 
