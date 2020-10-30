@@ -1,5 +1,5 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {hashHistory, Route, Router} from "react-router";
 import {Provider} from "react-redux";
 import configureStore from "./configureStore";
@@ -25,10 +25,10 @@ import UserSetting from "./routers/Settings/UserSetting";
 import NoMatch from "./routers/NoMatch";
 //styles
 import "./index.scss";
+import reportWebVitals from './reportWebVitals';
 
 //store
-let store = configureStore(Reducer, InitReducer);
-
+const store = configureStore(Reducer, InitReducer);
 class TheApp extends React.Component {
     render() {
         return (
@@ -57,11 +57,15 @@ class TheApp extends React.Component {
 }
 
 ReactDOM.render(
-    <Provider store={store}>
-        <TheApp/>
-    </Provider>,
-    document.getElementById('root')
+  <React.StrictMode>
+      <Provider store={store}>
+          <TheApp/>
+      </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
-
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

@@ -1,127 +1,60 @@
 {
-  "name": "TailLog",
-  "main": "main.js",
-  "productName": "TailLog",
-  "version": "1.0.0-20171204",
-  "author": "zhouli",
-  "homepage": ".",
-  "DEV": false,
+  "name": "taillog-v2",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.7.3",
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
+    "electron-packager": "^15.1.0",
     "express": "^4.15.4",
     "jszip": "^3.1.5",
+    "moment": "^2.29.1",
     "nedb": "^1.8.0",
+    "node-sass": "^4.14.1",
     "node-uuid": "^1.4.8",
     "nodejs-websocket": "^1.7.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "react-router": "^5.2.0",
+    "react-scripts": "4.0.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
     "ssh2": "^0.5.5",
-    "text-encoding": "^0.6.4"
+    "text-encoding": "^0.6.4",
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "eslint-fix": "eslint --fix ./src/**/*.js",
-    "test": "node scripts/test.js --env=jsdom",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "mac-full": "npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg": "electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
     "mac-pack": "electron-packager ./ --electron-version=1.7.8 --platform=darwin --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public",
     "win-pack": "electron-packager ./ --electron-version=2.0.2 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public"
   },
-  "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
-    ],
-    "testEnvironment": "node",
-    "testURL": "http://localhost",
-    "transform": {
-      "^.+\\.(js|jsx)$": "<rootDir>/node_modules/babel-jest",
-      "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
-      "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
-    },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
-    "moduleNameMapper": {
-      "^react-native$": "react-native-web"
-    },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx",
-      "node"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "devDependencies": {
-    "antd": "^2.12.5",
-    "autoprefixer": "7.1.2",
-    "babel-core": "6.25.0",
-    "babel-eslint": "7.2.3",
-    "babel-jest": "20.0.3",
-    "babel-loader": "7.1.1",
-    "babel-plugin-import": "^1.3.1",
-    "babel-preset-react-app": "^3.0.2",
-    "babel-runtime": "6.23.0",
-    "case-sensitive-paths-webpack-plugin": "2.1.1",
-    "chalk": "1.1.3",
-    "cookie-parser": "^1.4.3",
-    "css-loader": "0.28.4",
-    "dotenv": "4.0.0",
-    "electron-packager": "^12.1.0",
-    "eslint": "4.4.1",
-    "eslint-config-react-app": "^2.0.0",
-    "eslint-loader": "1.9.0",
-    "eslint-plugin-flowtype": "2.35.0",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-jsx-a11y": "5.1.1",
-    "eslint-plugin-react": "7.1.0",
-    "extract-text-webpack-plugin": "3.0.0",
-    "file-loader": "0.11.2",
-    "fs-extra": "3.0.1",
-    "html-webpack-plugin": "2.29.0",
-    "jest": "20.0.4",
-    "less": "^2.7.2",
-    "less-loader": "^4.0.5",
-    "moment": "^2.22.2",
-    "node-sass": "^4.14.1",
-    "object-assign": "4.1.1",
-    "postcss-flexbugs-fixes": "3.2.0",
-    "postcss-loader": "2.0.6",
-    "promise": "8.0.1",
-    "react": "^15.6.1",
-    "react-dev-utils": "^3.1.0",
-    "react-dom": "^15.6.1",
-    "react-error-overlay": "^1.0.10",
-    "react-redux": "^5.0.6",
-    "react-router": "^3.0.5",
-    "react-scripts": "^1.0.13",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "sass-loader": "^6.0.6",
-    "style-loader": "0.18.2",
-    "sw-precache-webpack-plugin": "0.11.4",
-    "url-loader": "0.5.9",
-    "webpack": "3.5.1",
-    "webpack-dev-server": "2.7.1",
-    "webpack-manifest-plugin": "1.2.1",
-    "whatwg-fetch": "2.0.3",
-    "xterm": "^2.9.2"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

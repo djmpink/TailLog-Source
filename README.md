@@ -33,7 +33,7 @@ QQ交流群：455735429
     * Node.js
     * python2
     * electron
-    
+* 注意，下文虽然描述上采用的npm，实际上个人更推荐使用yarn    
 * 在开发或部署过程中，有一些注意事项或建议，可以更好的使用本工程：
     * npm加速 [可选，推荐]
     
@@ -55,8 +55,6 @@ QQ交流群：455735429
         1. 以上步骤的配置的sass-binary-site项是否正确
         2. [不推荐]如果你不想通过配置sass-binary-site的方式，需要保证本地需要有相关编译环境： win上可以考虑使用
         [windows-build-tools](https://github.com/felixrieseberg/windows-build-tools)或安装VS 2015，但是这两者至少都是2G以上的空间占用，并且非常耗时
-    
-    * 或者你可以考虑使用`cnpm i`（如果没有安装cnpm，请先执行`npm i -g cnpm`），该命令不推荐在mac上执行，测试发现可能会出现一些意外问题
     
     * electron环境
         * 请全局安装electron：正常情况下应该直接执行`npm i -g electron`，但是因为国内环境问题，推荐下面的步骤（以win为例）：
