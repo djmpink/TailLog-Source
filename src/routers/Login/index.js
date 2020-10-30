@@ -7,7 +7,7 @@ import { Button, Card, Col, Input, Layout, notification, Row, Spin } from "antd"
 import CopyRight from "../../components/CopyRight";
 import Check from "../../utils/CheckList";
 import AjaxAction from "../../actions/AjaxAction";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 import Header from "../../components/Header/Header2";
 import "./index.scss";
 const FormItem = Form.Item;

@@ -10,7 +10,7 @@ import {
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import "../Login/index.scss";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 
 const {Header} = Layout;
 

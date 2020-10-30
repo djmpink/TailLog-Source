@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 //styles
 import "./index.scss";
 export default class NoMatch extends Component {

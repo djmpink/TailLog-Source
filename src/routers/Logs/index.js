@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import "./logs.scss";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
 

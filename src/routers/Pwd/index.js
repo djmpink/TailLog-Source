@@ -4,7 +4,7 @@ import AjaxAction from "../../actions/AjaxAction";
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 import Header from "../../components/Header/Header2";
 const FormItem = Form.Item;
 

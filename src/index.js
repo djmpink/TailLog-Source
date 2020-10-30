@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {hashHistory, Route, Router} from "react-router";
+import {HashRouter as Router, Switch, Route} from 'react-router-dom';
 import {Provider} from "react-redux";
 import configureStore from "./configureStore";
 //reducers
@@ -32,25 +32,27 @@ const store = configureStore(Reducer, InitReducer);
 class TheApp extends React.Component {
     render() {
         return (
-            <Router history={hashHistory}>
-                <Route path="/" component={Config}/>
-                <Route path="login" component={Login}/>
-                <Route path="reg" component={Reg}/>
-                <Route path="await" component={RegAwait}/>
-                <Route path="activate" component={Activate}/>
-                <Route path="pwd" component={Pwd}/>
-                <Route path="reset" component={Reset}/>
-                <Route path="binding" component={Binding}/>
-                <Route path="userSetting" component={UserSetting}/>
-                <Route path="logs" component={multi}/>
-                <Route path="multi" component={multi}/>
-                <Route path="term" component={Term}/>
-                <Route path="config" component={Config}/>
-                <Route path="ssh" component={SSHList}/>
-                <Route path="agent" component={AgentList}/>
-                <Route path="group" component={GroupList}/>
-                <Route path="callback/:platform" component={Callback}/>
-                <Route path="*" component={NoMatch}/>
+            <Router>
+                <Switch>
+                    <Route path="/" component={Config}/>
+                    <Route path="login" component={Login}/>
+                    <Route path="reg" component={Reg}/>
+                    <Route path="await" component={RegAwait}/>
+                    <Route path="activate" component={Activate}/>
+                    <Route path="pwd" component={Pwd}/>
+                    <Route path="reset" component={Reset}/>
+                    <Route path="binding" component={Binding}/>
+                    <Route path="userSetting" component={UserSetting}/>
+                    <Route path="logs" component={multi}/>
+                    <Route path="multi" component={multi}/>
+                    <Route path="term" component={Term}/>
+                    <Route path="config" component={Config}/>
+                    <Route path="ssh" component={SSHList}/>
+                    <Route path="agent" component={AgentList}/>
+                    <Route path="group" component={GroupList}/>
+                    <Route path="callback/:platform" component={Callback}/>
+                    <Route path="*" component={NoMatch}/>
+                </Switch>
             </Router>
         )
     }

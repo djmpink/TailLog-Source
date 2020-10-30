@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
 import { Button, Card, Col, Input, Layout, message, notification, Row, Spin } from "antd";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 import Check from "../../utils/CheckList";
 import AjaxAction from "../../actions/AjaxAction";
 import "../Login/index.scss";

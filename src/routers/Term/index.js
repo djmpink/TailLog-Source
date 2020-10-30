@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import "./logs.scss";
 import "./xterm.css";
 import "./fullscreen.css";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 import AjaxAction from "../../actions/AjaxAction";
 import actions from "../../actions";
 import { AppstoreOutlined, DownOutlined, PlusCircleOutlined, RetweetOutlined } from '@ant-design/icons';

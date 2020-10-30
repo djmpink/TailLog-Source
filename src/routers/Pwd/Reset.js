@@ -5,7 +5,7 @@ import { CheckCircleOutlined, LeftOutlined } from '@ant-design/icons';
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
-import {Link} from "react-router";
+import {Link} from "react-router-dom";
 const FormItem = Form.Item;
 const {Header} = Layout;
 
