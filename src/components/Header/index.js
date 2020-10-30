@@ -55,7 +55,7 @@ class ConfigHeader extends React.Component {
                             onClick={this.handleClick}
                             defaultSelectedKeys={['config']}
                             selectedKeys={[pathname]}
-                            style={{background: "#343842", borderBottom: "#343842"}}
+                            style={{background: "#343842", borderBottom: "#343842", minWidth: 550}}
                             mode="horizontal"
                         >
                             <Menu.Item key="config" style={{background: "#343842", padding: "0 10px"}}>

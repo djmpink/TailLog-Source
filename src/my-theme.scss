@@ -1,0 +1,6 @@
+$primary-color: #7289da;// 覆盖原有的样式
+// 之前是通过修改webpack配置来修改，虽然更合适，但是现在不想折腾这个了
+.ant-btn-primary{
+  background-color: $primary-color;
+  border-color: $primary-color;
+}
