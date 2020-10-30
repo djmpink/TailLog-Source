@@ -24,7 +24,9 @@ import Binding from "./routers/Binding";
 import UserSetting from "./routers/Settings/UserSetting";
 import NoMatch from "./routers/NoMatch";
 //styles
+import './my-theme.less';
 import "./index.scss";
+
 import reportWebVitals from './reportWebVitals';
 
 //store

@@ -5,12 +5,14 @@
   "dependencies": {
     "@ant-design/compatible": "^1.0.8",
     "@ant-design/icons": "^4.2.2",
+    "@craco/craco": "^5.7.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.7.3",
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
+    "craco-less": "^1.17.0",
     "electron-packager": "^15.1.0",
     "express": "^4.15.4",
     "jszip": "^3.1.5",
@@ -33,10 +35,10 @@
     "xterm": "2.9.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "craco start",
+    "build": "craco build",
     "eslint-fix": "eslint --fix ./src/**/*.js",
-    "test": "react-scripts test",
+    "test": "craco test",
     "eject": "react-scripts eject",
     "mac-full": "npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg": "electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
