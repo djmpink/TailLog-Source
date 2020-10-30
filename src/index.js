@@ -25,7 +25,6 @@ import UserSetting from "./routers/Settings/UserSetting";
 import NoMatch from "./routers/NoMatch";
 //styles
 import "./index.scss";
-import "./index.less";
 
 //store
 let store = configureStore(Reducer, InitReducer);
