@@ -358,7 +358,12 @@ class Config extends React.Component {
                                 dataSource={this.props.configList}
                                 pagination={this.state.pagination}
                                 onChange={this.handleTableChange}
-                                onRowDoubleClick={this.doubleClick}
+                                // todo: 记得测试这里是否OK，不行的话显示record传入
+                                onRow={record=>{
+                                    return {
+                                        onDoubleClick:this.doubleClick
+                                    }
+                                }}
                                 expandedRowRender={record => <p>{"日志文件全路径： " + record.path}</p>}
                             />
                         </div>
