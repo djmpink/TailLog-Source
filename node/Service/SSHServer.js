@@ -1,7 +1,7 @@
 let common = require('./CommonServer');
 let uuid = require('node-uuid');
 const SSH_URL = "/v1/log/config/ssh/";
-
+const {db,dbPath} = require('../db');
 const sshServer = function (app) {
 
     //----新增SSH配置----//

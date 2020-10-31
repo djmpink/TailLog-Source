@@ -1,7 +1,7 @@
 let common = require('./CommonServer');
 let uuid = require('node-uuid');
 const GROUP_URL = "/v1/log/config/group/";
-
+const {db,dbPath} = require('../db');
 const groupServer = function (app) {
 
     //----新增分组----//

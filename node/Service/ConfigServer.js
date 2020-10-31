@@ -3,6 +3,7 @@ let uuid = require('node-uuid');
 let async = require("async");
 const CONFIG_URL = "/v1/log/config/";
 
+const {db,dbPath} = require('../db');
 const configServer = function (app) {
 
     //----新增配置----//

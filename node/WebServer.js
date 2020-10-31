@@ -1,32 +1,28 @@
 let express = require('express');
 let Client = require('ssh2').Client;
 let bodyParser = require('body-parser');
-let nedb = require('nedb');
+
 let app = express();
 let fs = require('fs');
 let path = require('path');
 let JSZip = require("jszip");
 let zip = new JSZip();
-const os = require('os');
+
 
 let {sshServer} = require('./Service/SSHServer');
 let {agentServer} = require('./Service/AgentServer');
 let {configServer} = require('./Service/ConfigServer');
 let {groupServer} = require('./Service/GroupServer');
+const {db,dbPath} = require('./db');
 
 app.use(bodyParser.json({limit: '1mb'}));  //这里指定参数使用 json 格式
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-let dbPath = os.homedir() + "/.taillog/.database/";//本地数据库地址（可修改）
 
-//初始化数据库
-db = {};
-db.t_ssh = new nedb({filename: dbPath + 't_ssh.db', autoload: true});
-db.t_agent = new nedb({filename: dbPath + 't_agent.db', autoload: true});
-db.t_group = new nedb({filename: dbPath + 't_group.db', autoload: true});
-db.t_config = new nedb({filename: dbPath + 't_config.db', autoload: true});
+
+
 
 //业务服务程序，提供配置信息的增删改查
 const webServer = function () {

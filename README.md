@@ -107,10 +107,9 @@ mac上也可以直接执行`npm run mac-full`执行完以上的步骤2-3
 
 ## 其他注意事项
 * 如果要在mac上打包win，你需要参考[electron-packager Building Windows apps from non-Windows platforms](https://github.com/electron-userland/electron-packager#user-content-building-windows-apps-from-non-windows-platforms)章节，主要是需要安装wine
-* 如果在执行打包脚本的时候你卡在下载上，可以从[淘宝npm的electron镜像](https://npm.taobao.org/mirrors/electron/)上下载你需要的版本和其对应的SHASUMS256值，
-放置到用户目录下的.electron下，win对应的目录是C:\Users\你的名字\.electron，mac下是~/.electron，win参考如下：
-    1. electron-v2.0.2-win32-x64.zip
-    2. SHASUMS256.txt-2.0.2 （没有其他后缀名，其内容参见[这里](https://npm.taobao.org/mirrors/electron/2.0.2/SHASUMS256.txt)）
+* 由于国内环境下载electron可能会很卡，可以考虑设置淘宝镜像，具体设置如下
+    1.  执行`npm config set ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"`
+    2.  再执行 `npm run win-pack`或者`npm run mac-pack`等命令
 
 ## 目录结构
     * app APP的生成目录（如果没有生成过，则不存在）

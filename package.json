@@ -13,6 +13,7 @@
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "craco-less": "^1.17.0",
+    "electron": "^10.1.5",
     "electron-packager": "^15.1.0",
     "express": "^4.15.4",
     "jszip": "^3.1.5",
@@ -36,6 +37,7 @@
   },
   "scripts": {
     "start": "craco start",
+    "e": "electron .",
     "build": "craco build",
     "eslint-fix": "eslint --fix ./src/**/*.js",
     "test": "craco test",
@@ -43,7 +45,7 @@
     "mac-full": "npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg": "electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
     "mac-pack": "electron-packager ./ --electron-version=1.7.8 --platform=darwin --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public",
-    "win-pack": "electron-packager ./ --electron-version=2.0.2 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public"
+    "win-pack": "electron-packager ./ --electron-version=10.1.5 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public"
   },
   "eslintConfig": {
     "extends": [

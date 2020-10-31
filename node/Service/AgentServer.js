@@ -1,7 +1,7 @@
 let common = require('./CommonServer');
 let uuid = require('node-uuid');
 const AGENT_URL = "/v1/log/config/agent/";
-
+const {db,dbPath} = require('../db');
 const agentServer = function (app) {
 
     //----新增代理配置----//
