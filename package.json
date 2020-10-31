@@ -1,7 +1,9 @@
 {
   "name": "taillog-v2",
   "version": "0.1.0",
+  "main": "main.js",
   "private": true,
+  "DEV": true,
   "dependencies": {
     "@ant-design/compatible": "^1.0.8",
     "@ant-design/icons": "^4.2.2",

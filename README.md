@@ -87,7 +87,7 @@ QQ交流群：455735429
     
 ### 客户端（electron）运行
 
-1. package.json中设置：`"DEV": true,`
+1. package.json中设置：`"DEV": true,`， 注意，请确保该参数是true，否则不会正常加载出网页内容
 2. 第一个命令行窗口执行：`npm start`
 3. 第二个命令行窗口执行：`electron .` 或者直接执行`node scripts/main`
 
