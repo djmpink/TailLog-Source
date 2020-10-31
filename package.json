@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "main": "main.js",
   "private": true,
-  "DEV": true,
+  "homepage": "./",
+  "DEV": false,
   "dependencies": {
     "@ant-design/compatible": "^1.0.8",
     "@ant-design/icons": "^4.2.2",
@@ -15,8 +16,6 @@
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
     "craco-less": "^1.17.0",
-    "electron": "^10.1.5",
-    "electron-packager": "^15.1.0",
     "express": "^4.15.4",
     "jszip": "^3.1.5",
     "moment": "^2.29.1",
@@ -36,6 +35,10 @@
     "text-encoding": "^0.6.4",
     "web-vitals": "^0.2.4",
     "xterm": "2.9.2"
+  },
+  "devDependency": {
+    "electron": "^10.1.5",
+    "electron-packager": "^15.1.0"
   },
   "scripts": {
     "start": "craco start",

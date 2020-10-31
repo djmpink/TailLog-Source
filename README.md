@@ -133,6 +133,7 @@ mac上也可以直接执行`npm run mac-full`执行完以上的步骤2-3
 ## 升级日志
 * 升级react/react-dom到17.0.1; node-sass到4.14.1；antd到4.7.3；react-router到5.2.0；react-redux到7.2.2等最新版本
 * 重新采用当前最新的create-react-app进行程序打包，同时使用craco做少量配置
+* 更新相关配置，使其适配当前最新的electron版本（10.1.5）
 * 目前样式等正在调试中
      
 ## Developers

@@ -24,7 +24,7 @@ function createWindow() {
         win.webContents.openDevTools();
     } else {
         // 加载应用的 index.html
-        win.loadURL('file://' + __dirname + '/build/index.html');
+        win.loadFile('./build/index.html');
     }
 
     // Emitted when the window is closed.
