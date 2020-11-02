@@ -94,7 +94,7 @@ QQ交流群：455735429
 
 1. package.json中设置：`"DEV": true,`， 注意，请确保该参数是true，否则会加载build/index.html
 2. 第一个命令行窗口执行：`npm start`
-3. 第二个命令行窗口执行：`yarn et`
+3. 第二个命令行窗口执行：`npm run et`
 
 ## 打包成客户端
 1. package.json中设置：`"DEV": false,`
