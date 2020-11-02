@@ -50,7 +50,7 @@ class ConfigHeader extends React.Component {
             <Header className={'layout-header'}>
                 <Row>
                     <Col span={1}/>
-                    <Col span={12}>
+                    <Col style={{flex:1}}>
                         <Menu
                             onClick={this.handleClick}
                             defaultSelectedKeys={['config']}
@@ -84,7 +84,7 @@ class ConfigHeader extends React.Component {
                             </Menu.Item>
                         </Menu>
                     </Col>
-                    <Col span={8}/>
+
                     <Col span={1}>
                         <Tooltip title="命令行工具" placement="left">
                             <Button type="primary" size="small" shape="circle" onClick={this.terminal}>
