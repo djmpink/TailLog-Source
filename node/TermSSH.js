@@ -73,7 +73,7 @@ const termSSH = function () {
         let host = server.address().address;
         let port = server.address().port;
 
-        console.log("Term应用实例，访问地址为 http://%s:%s", host, port)
+        console.log("Term instance, visit http://%s:%s", host, port)
 
     });
 

@@ -4,7 +4,7 @@
   "main": "main.js",
   "private": true,
   "homepage": "./",
-  "DEV": false,
+  "DEV": true,
   "dependencies": {
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
@@ -15,7 +15,6 @@
     "nodejs-websocket": "^1.7.1",
     "ssh2": "^0.5.5",
     "text-encoding": "^0.6.4",
-
     "xterm": "2.9.2"
   },
   "devDependencies": {
@@ -41,15 +40,16 @@
   },
   "scripts": {
     "start": "craco start",
-    "e": "electron .",
+    "et": "electron .",
     "build": "craco build",
     "eslint-fix": "eslint --fix ./src/**/*.js",
     "test": "craco test",
     "eject": "react-scripts eject",
     "mac-full": "npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg": "electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
-    "mac-pack": "electron-packager ./ --electron-version=1.7.8 --platform=darwin --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public",
-    "win-pack": "electron-packager ./ --electron-version=2.0.2 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=\"public|.cache|.idea|/src/|/images/|.map|yarn.lock\""
+    "pack": "electron-packager ./ --electron-version=2.0.2 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=\"public|.cache|.idea|/src/|/images/|.map|yarn.lock\"",
+    "mac-pack": "npm run pack --platform=darwin",
+    "win-pack": "npm run pack --platform=win32"
   },
   "eslintConfig": {
     "extends": [
