@@ -21,22 +21,22 @@ class ConfigHeader extends React.Component {
     }
 
     logout = () => {
-        const {dispatch, router} = this.props;
+        const {dispatch, history} = this.props;
         dispatch(AjaxAction.logout()).then((data) => {
             if (data.result) {
-                router.push('/');
+                history.push('/');
             }
         });
     };
 
     terminal = () => {
-        const {router} = this.props;
-        router.push('term');
+        const {history} = this.props;
+        history.push('term');
     };
 
     handleClick = (e) => {
-        const {router} = this.props;
-        router.push(e.key);
+        const {history} = this.props;
+        history.push(e.key);
     };
     prompt = (level, msg) => {
         ['info', 'error', 'warning'].indexOf(level) > -1 && message[level](msg);

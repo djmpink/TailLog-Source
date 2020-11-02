@@ -6,6 +6,7 @@ import '@ant-design/compatible/assets/index.css';
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import "../Login/index.scss";
+import {withRouter} from "react-router";
 const {Header} = Layout;
 const FormItem = Form.Item;
 
@@ -38,14 +39,14 @@ class Binding extends React.Component {
         }
     };
     binding = () => {
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let {email} = this.state;
         // let url = window.location.href;
         let url = "http://logger.taillog.cn/#/";
         dispatch(AjaxAction.binding(email, url)).then((data) => {
             if (data.result) {
                 this.openNotification("success", "设置登录邮箱邮件发送成功", "前往邮箱，点击邮件链接验证", 7);
-                router.push('/userSetting');
+                history.push('/userSetting');
             } else {
                 this.openNotification("warning", data.msg, "", 3);
             }
@@ -69,8 +70,8 @@ class Binding extends React.Component {
     }
 
     goAccount = () => {
-        let {router} = this.props;
-        router.push('/userSetting');
+        let {history} = this.props;
+        history.push('/userSetting');
     };
     handleInputChange = (key, event) => {
         const {target} = event;
@@ -90,8 +91,8 @@ class Binding extends React.Component {
                         shape="circle" icon={<LeftOutlined />}
                         type="primary"
                         onClick={() => {
-                            let {router} = this.props;
-                            router.push('/userSetting');
+                            let {history} = this.props;
+                            history.push('/userSetting');
                         }}/>
                 </Header>
                 <div style={{margin: "auto"}} onKeyPress={this.listenEnter}>
@@ -143,4 +144,4 @@ class Binding extends React.Component {
     }
 }
 
-export default connect((state) => ({state: state}))((Binding));
+export default connect((state) => ({state: state}))((withRouter(Binding)));

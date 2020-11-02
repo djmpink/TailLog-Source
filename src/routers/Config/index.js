@@ -28,7 +28,7 @@ import "./index.scss";
 import Detail from "../../components/Config";
 import Header from "../../components/Header";
 import CopyRight from "../../components/CopyRight";
-import {withRouter} from "react-router";
+import {withRouter} from "react-router-dom";
 const Option = Select.Option;
 const {Content} = Layout;
 const children = [];
@@ -358,10 +358,9 @@ class Config extends React.Component {
                                 dataSource={this.props.configList}
                                 pagination={this.state.pagination}
                                 onChange={this.handleTableChange}
-                                // todo: 记得测试这里是否OK，不行的话显示record传入
                                 onRow={record=>{
                                     return {
-                                        onDoubleClick:this.doubleClick
+                                        onDoubleClick:event=>this.doubleClick(record)
                                     }
                                 }}
                                 expandedRowRender={record => <p>{"日志文件全路径： " + record.path}</p>}

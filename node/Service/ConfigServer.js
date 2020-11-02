@@ -51,7 +51,9 @@ const configServer = function (app) {
             common.errorResponse(null, "未获取配置详情");
             return;
         }
+        console.log(id);
         db.t_config.findOne({id: id, isValid: true}, (err, config) => {
+            console.log(config, 'config');
             let resp = {};
             resp.id = config.id;
             resp.info = config.info;

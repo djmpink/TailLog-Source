@@ -10,12 +10,12 @@ import {withRouter} from "react-router";
 class Activate extends React.Component {
 
     componentDidMount() {
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let {email, ticket} = this.props.location.query;
         dispatch(AjaxAction.activate(email, ticket)).then((data) => {
             if (data.result) {
                 setTimeout(() => {
-                    router.push('/login');
+                    history.push('/login');
                 }, 3000)
             }
         });

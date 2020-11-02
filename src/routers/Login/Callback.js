@@ -4,6 +4,7 @@ import AjaxAction from "../../actions/AjaxAction";
 import {connect} from "react-redux";
 import {Card, Layout} from "antd";
 import Header from "../../components/Header/Header2";
+import {withRouter} from "react-router";
 
 //登录成功页面
 class Callback extends React.Component {
@@ -12,10 +13,10 @@ class Callback extends React.Component {
         let {dispatch} = this.props;
         let platform = this.props.params.platform;
         let {code} = this.props.location.query;
-        let {router} = this.props;
+        let {history} = this.props;
         dispatch(AjaxAction.oauth2Callback(platform, code)).then((data) => {
             if (data.result) {
-                router.push('/config');
+                history.push('/config');
             }
         });
     }
@@ -37,4 +38,4 @@ export default connect((state) => {
     return {
         user: state.user
     }
-})((Callback));
+})((withRouter(Callback)));

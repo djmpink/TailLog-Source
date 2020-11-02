@@ -5,7 +5,7 @@ import { CheckCircleOutlined, LeftOutlined } from '@ant-design/icons';
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 const FormItem = Form.Item;
 const {Header} = Layout;
 
@@ -43,13 +43,13 @@ class Pwd extends React.Component {
         }
     };
     reset = () => {
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let {origin, fresh} = this.state;
         dispatch(AjaxAction.reset(null, origin, fresh, null)).then((data) => {
             if (data.result) {
                 this.openNotification();
                 setTimeout(() => {
-                    router.push('/userSetting');
+                    history.push('/userSetting');
                 }, 1000);
 
             }
@@ -72,8 +72,8 @@ class Pwd extends React.Component {
                         shape="circle" icon={<LeftOutlined />}
                         type="primary"
                         onClick={() => {
-                            let {router} = this.props;
-                            router.push('/userSetting');
+                            let {history} = this.props;
+                            history.push('/userSetting');
                         }}/>
                 </Header>
                 <div style={{margin: "auto"}} onKeyPress={this.listenEnter}>
@@ -120,4 +120,4 @@ class Pwd extends React.Component {
     }
 }
 
-export default connect((state) => ({state: state}))((Pwd));
+export default connect((state) => ({state: state}))((withRouter(Pwd)));

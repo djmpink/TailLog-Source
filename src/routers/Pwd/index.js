@@ -4,7 +4,7 @@ import AjaxAction from "../../actions/AjaxAction";
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import Header from "../../components/Header/Header2";
 const FormItem = Form.Item;
 
@@ -17,12 +17,12 @@ class Pwd extends React.Component {
     };
 
     find = () => {
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let {fresh} = this.state;
         let {email, origin, ticket} = this.props.location.query;
         dispatch(AjaxAction.find(email, origin, fresh, ticket)).then((data) => {
             if (data.result) {
-                router.push('/login');
+                history.push('/login');
             }
         });
     };
@@ -55,7 +55,7 @@ class Pwd extends React.Component {
     };
 
     forget = () => {
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let {email} = this.state;
         // let url = window.location.href;
         let url = "http://logger.taillog.cn/#/";
@@ -63,7 +63,7 @@ class Pwd extends React.Component {
         dispatch(AjaxAction.loginForget(email, url)).then((data) => {
             if (data.result) {
                 this.openNotification("success", "找回密码邮件发送成功", "前往邮箱，点击邮件链接验证", 7);
-                router.push('/login');
+                history.push('/login');
             } else {
                 this.openNotification("warning", data.msg, "", 3);
             }
@@ -158,4 +158,4 @@ class Pwd extends React.Component {
     }
 }
 
-export default connect((state) => ({state: state}))((Pwd));
+export default connect((state) => ({state: state}))((withRouter(Pwd)));

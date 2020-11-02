@@ -200,7 +200,11 @@ class GroupList extends React.Component {
                                 dataSource={this.props.groupList}
                                 pagination={this.state.pagination}
                                 onChange={this.handleTableChange}
-                                onRowDoubleClick={this.monitorLog}
+                                onRow={record=>{
+                                    return {
+                                        onDoubleClick:event=>this.monitorLog(record)
+                                    }
+                                }}
                             />
                         </div>
                         {

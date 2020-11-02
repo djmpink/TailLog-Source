@@ -52,7 +52,7 @@ class Login extends React.Component {
         this.setState({loading: false});
 
         let {email, password} = this.state;
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let _this = this;
         if (Check.emailCheck(email) && Check.password(password)) {
             _this.loginEnable = false;
@@ -63,7 +63,7 @@ class Login extends React.Component {
                 if (data.result) {
                     this.openNotification("success", "Welcome !", "工欲善其事必先利其器 ^_^,", 3);
                     setTimeout(() => {
-                        router.push("/config");
+                        history.push("/config");
                     }, 1000);
                 } else {
                     this.setState({loading: true});

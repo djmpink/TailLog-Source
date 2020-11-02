@@ -12,6 +12,7 @@ import {
 
 import { Button, Dropdown, Menu, message, Upload } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
+import {withRouter} from "react-router";
 const styles = {
     iconStyle:{
         fontSize: 12, margin: "0 10px"
@@ -52,10 +53,10 @@ const props = {
 
 class Setting extends React.Component {
     logout = () => {
-        const {dispatch, router} = this.props;
+        const {dispatch, history} = this.props;
         dispatch(AjaxAction.logout()).then((data) => {
             if (data.result) {
-                router.push('/login');
+                history.push('/login');
             }
         });
     };
@@ -82,7 +83,7 @@ class Setting extends React.Component {
 
     };
     setting = (e) => {
-        let {router} = this.props;
+        let {history} = this.props;
         switch (e.key) {
             case "logout":
                 this.logout();
@@ -91,13 +92,12 @@ class Setting extends React.Component {
                 this.exportFile();
                 break;
             case "login":
-                router.push(e.key);
+                history.push(e.key);
                 break;
             case "userSetting"://下同
-                router.push(e.key);
+                history.push(e.key);
                 break;
             case "help":
-                // router.push(e.key);
                 break;
             default:
                 break
@@ -160,4 +160,4 @@ class Setting extends React.Component {
     }
 }
 
-export default connect((state) => ({}))(Setting);
+export default connect((state) => ({}))(withRouter(Setting));

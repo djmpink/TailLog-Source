@@ -10,7 +10,7 @@ import {
 import { Button, Card, Col, Input, Layout, notification, Row } from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 import "../Login/index.scss";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 const {Header} = Layout;
 
@@ -96,8 +96,8 @@ class UserSetting extends React.Component {
                         shape="circle" icon={<LeftOutlined />}
                         type="primary"
                         onClick={() => {
-                            let {router} = this.props;
-                            router.push('/config');
+                            let {history} = this.props;
+                            history.push('/config');
                         }}/>
                 </Header>
                 <div style={{margin: "auto"}}>
@@ -184,4 +184,4 @@ export default connect((state) => {
     return {
         userSetting: state.userSetting
     }
-})((UserSetting));
+})((withRouter(UserSetting)));

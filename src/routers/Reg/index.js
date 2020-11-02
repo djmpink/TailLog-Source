@@ -44,7 +44,7 @@ class Reg extends React.Component {
 
     reg = () => {
         this.setState({loading: true});
-        let {dispatch, router} = this.props;
+        let {dispatch, history} = this.props;
         let {email, nickname, password} = this.state;
         // let url = window.location.protocol + "//" + window.location.host + "/#/";
         let url = "http://logger.taillog.cn/#/";
@@ -53,7 +53,7 @@ class Reg extends React.Component {
                 this.setState({loading: false});
                 if (data.result) {
                     this.openNotification("success", "注册邮件发送成功", "前往邮箱，点击邮件链接验证", 7);
-                    router.push('/login');
+                    history.push('/login');
                 } else {
                     this.openNotification("warning", data.msg, "", 3);
                 }

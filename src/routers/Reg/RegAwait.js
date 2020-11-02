@@ -3,12 +3,13 @@ import {connect} from "react-redux";
 import {Button, Card, Col, Layout, Row} from "antd";
 import "../Login/index.scss";
 import Header from "../../components/Header/Header2";
+import {withRouter} from "react-router";
 
 //等待注册激活页
 class RegAwait extends React.Component {
     login = () => {
-        let {router} = this.props;
-        router.push('/login');
+        let {history} = this.props;
+        history.push('/login');
     };
 
     render() {
@@ -33,4 +34,4 @@ class RegAwait extends React.Component {
     }
 }
 
-export default connect()(RegAwait);
+export default connect()(withRouter(RegAwait));
