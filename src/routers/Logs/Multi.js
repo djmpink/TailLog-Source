@@ -80,7 +80,7 @@ class Multi extends React.Component {
     }
 
     componentDidMount() {
-
+        console.log("Multi")
     }
 
     render() {

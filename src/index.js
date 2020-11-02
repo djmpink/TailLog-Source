@@ -36,24 +36,26 @@ class TheApp extends React.Component {
         return (
             <Router>
                 <Switch>
+
+                    <Route path="/login" component={Login}/>
+                    <Route path="/reg" component={Reg}/>
+                    <Route path="/await" component={RegAwait}/>
+                    <Route path="/activate" component={Activate}/>
+                    <Route path="/pwd" component={Pwd}/>
+                    <Route path="/reset" component={Reset}/>
+                    <Route path="/binding" component={Binding}/>
+                    <Route path="/userSetting" component={UserSetting}/>
+                    <Route path="/logs" component={multi}/>
+                    <Route path="/multi" component={multi}/>
+                    <Route path="/term" component={Term}/>
+                    <Route path="/config" component={Config}/>
+                    <Route path="/ssh" component={SSHList}/>
+                    <Route path="/agent" component={AgentList}/>
+                    <Route path="/group" component={GroupList}/>
+                    <Route path="/callback/:platform" component={Callback}/>
                     <Route path="/" component={Config}/>
-                    <Route path="login" component={Login}/>
-                    <Route path="reg" component={Reg}/>
-                    <Route path="await" component={RegAwait}/>
-                    <Route path="activate" component={Activate}/>
-                    <Route path="pwd" component={Pwd}/>
-                    <Route path="reset" component={Reset}/>
-                    <Route path="binding" component={Binding}/>
-                    <Route path="userSetting" component={UserSetting}/>
-                    <Route path="logs" component={multi}/>
-                    <Route path="multi" component={multi}/>
-                    <Route path="term" component={Term}/>
-                    <Route path="config" component={Config}/>
-                    <Route path="ssh" component={SSHList}/>
-                    <Route path="agent" component={AgentList}/>
-                    <Route path="group" component={GroupList}/>
-                    <Route path="callback/:platform" component={Callback}/>
                     <Route path="*" component={NoMatch}/>
+
                 </Switch>
             </Router>
         )
