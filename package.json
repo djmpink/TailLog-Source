@@ -6,23 +6,24 @@
   "homepage": "./",
   "DEV": false,
   "dependencies": {
+    "async": "^2.6.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.15.4",
+    "jszip": "^3.1.5",
+    "nedb": "^1.8.0",
+    "node-uuid": "^1.4.8",
+    "nodejs-websocket": "^1.7.1",
+    "ssh2": "^0.5.5",
+    "text-encoding": "^0.6.4",
+
+    "xterm": "2.9.2"
+  },
+  "devDependencies": {
     "@ant-design/compatible": "^1.0.8",
     "@ant-design/icons": "^4.2.2",
     "@craco/craco": "^5.7.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "antd": "^4.7.3",
-    "async": "^2.6.0",
-    "body-parser": "^1.18.2",
     "craco-less": "^1.17.0",
-    "express": "^4.15.4",
-    "jszip": "^3.1.5",
-    "moment": "^2.29.1",
-    "nedb": "^1.8.0",
     "node-sass": "^4.14.1",
-    "node-uuid": "^1.4.8",
-    "nodejs-websocket": "^1.7.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-redux": "^7.2.2",
@@ -31,13 +32,11 @@
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "ssh2": "^0.5.5",
-    "text-encoding": "^0.6.4",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.7.3",
     "web-vitals": "^0.2.4",
-    "xterm": "2.9.2"
-  },
-  "devDependency": {
-    "electron": "^10.1.5",
     "electron-packager": "^15.1.0"
   },
   "scripts": {
@@ -50,7 +49,7 @@
     "mac-full": "npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg": "electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
     "mac-pack": "electron-packager ./ --electron-version=1.7.8 --platform=darwin --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public",
-    "win-pack": "electron-packager ./ --electron-version=10.1.5 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=public"
+    "win-pack": "electron-packager ./ --electron-version=2.0.2 --platform=win32 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=\"public|.cache|.idea|/src/|/images/|.map|yarn.lock\""
   },
   "eslintConfig": {
     "extends": [
