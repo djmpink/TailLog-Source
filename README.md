@@ -62,7 +62,8 @@ QQ交流群：455735429
     
     * electron环境
         * 请全局安装electron：正常情况下应该直接执行`npm i -g electron`或`yarn global add electron`，但是因为国内环境问题，可以参考上文的electron加速部分设置后重新执行
-        ，或者参考[electron官网的安装章节](https://github.com/electron/electron/blob/master/docs/tutorial/installation.md) ，否则参考下面的步骤（以win为例）[不推荐]：
+        ，或者参考[electron官网的安装章节](https://github.com/electron/electron/blob/master/docs/tutorial/installation.md) ，
+        否则参考下面的步骤（以win为例）[不推荐]， 注意，以下方案当前时间节点上已经不能保证是否OK：
         
         1. 使用[淘宝镜像](https://npm.taobao.org/mirrors/electron/) 找到适合自己的版本：
             
@@ -139,7 +140,8 @@ QQ交流群：455735429
 * 升级react/react-dom到17.0.1; node-sass到4.14.1；antd到4.7.3；react-router到5.2.0；react-redux到7.2.2等最新版本
 * 重新采用当前最新的create-react-app进行程序打包，同时使用craco做少量配置
 * 更新相关配置，使其适配当前最新的electron版本（10.1.5）
-    * 注意，因为最新版（10.1.5）打包后大小比之前大，package.json中的还是保留了老版本2.0.2的打包，实测发现，在win上打包并采用WinRAR进行压缩（压缩方式选择最好，后缀名使用.rar），前者大约是60.5M，后者大约是40M
+    * 注意，因为最新版（10.1.5）打包后大小比之前大，package.json中的还是保留了老版本2.0.2的打包，实测发现，在win上打包并采用WinRAR进行压缩
+    （压缩方式选择最好，后缀名使用.rar），前者大约是60.5M，后者大约是40M
     * 如果需要用其他版本打包，可以自行修改package.json中pack脚本的参数，理论上支持最新版和2.0.2的版本，如果其他版本有问题，欢迎通过上面的QQ群方式联系 
 * 调整package.json中dependencies和devDependencies，其中devDependencies不会在electron-packager中被打包进来
 * 优化了打包文件的大小和打包的时间，去除了不少不必要的打包内容
