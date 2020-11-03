@@ -41,7 +41,7 @@ QQ交流群：455735429
         `npm config set registry=https://registry.npm.taobao.org` 
         
         * electron加速： 
-        `npm config set ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"`
+        `npm config -g set ELECTRON_MIRROR="https://npm.taobao.org/mirrors/electron/"`
        
     * Windows环境
     

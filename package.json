@@ -1,10 +1,10 @@
 {
-  "name": "taillog-v2",
-  "version": "0.1.0",
+  "name": "taillog",
+  "version": "0.2.0",
   "main": "main.js",
   "private": true,
   "homepage": "./",
-  "DEV": true,
+  "DEV": false,
   "dependencies": {
     "async": "^2.6.0",
     "body-parser": "^1.18.2",
@@ -21,7 +21,12 @@
     "@ant-design/compatible": "^1.0.8",
     "@ant-design/icons": "^4.2.2",
     "@craco/craco": "^5.7.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.7.3",
     "craco-less": "^1.17.0",
+    "electron-packager": "^15.1.0",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -31,12 +36,7 @@
     "react-scripts": "4.0.0",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "antd": "^4.7.3",
-    "web-vitals": "^0.2.4",
-    "electron-packager": "^15.1.0"
+    "web-vitals": "^0.2.4"
   },
   "scripts": {
     "start": "craco start",
