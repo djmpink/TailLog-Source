@@ -47,7 +47,7 @@
     "eject": "react-scripts eject",
     "mac-full": "npm run build && npm run mac-pack && npm run dmg",
     "mac-dmg": "electron-installer-dmg ./app/TailLog-darwin-x64/TailLog.app ./app/TailLog --overwrite",
-    "pack": "electron-packager ./ --electron-version=2.0.2 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=\"public|.cache|.idea|/src/|/images/|.map|yarn.lock\"",
+    "pack": "electron-packager ./ --electron-version=2.0.2 --arch=x64 --out=./app --asar --overwrite --icon=./public/logo.ico --ignore=\"public|.cache|.idea|/images/|.map|yarn.lock\"",
     "mac-pack": "npm run pack --platform=darwin",
     "win-pack": "npm run pack --platform=win32"
   },
