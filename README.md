@@ -143,7 +143,14 @@ QQ交流群：455735429
     * 如果需要用其他版本打包，可以自行修改package.json中pack脚本的参数，理论上支持最新版和2.0.2的版本，如果其他版本有问题，欢迎通过上面的QQ群方式联系 
 * 调整package.json中dependencies和devDependencies，其中devDependencies不会在electron-packager中被打包进来
 * 优化了打包文件的大小和打包的时间，去除了不少不必要的打包内容
-     
+  
+  
+## 开发注意事项
+* 当前打包脚本中应该排除掉/src部分，由于在mac上过滤掉`/src/`会导致报错，暂时不过滤，大约有1M+的源代码会被打包进去
+* 后续新增的依赖上，node端的请加入到dependencies,前端请加入到devDependencies中，究其原因是，前端最终是需要打包到build中的，
+所以前端相关的最终都没有必要放dependencies中，因为electron-packager最终打包时只会打入dependencies的部分
+
+
 ## Developers
 
 [七号球员](http://7player.cn/)
