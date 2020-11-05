@@ -1,6 +1,6 @@
 {
-  "name": "taillog-v2",
-  "version": "0.1.0",
+  "name": "taillog",
+  "version": "2.0.0",
   "main": "main.js",
   "private": true,
   "homepage": "./",

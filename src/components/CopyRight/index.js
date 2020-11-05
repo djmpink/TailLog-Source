@@ -7,8 +7,8 @@ export default () => (
         <Row>
             <Col span={8}/>
             <Col span={8}>
-                © 2017「 <a href="http://www.taillog.cn/" target="_blank" rel="noopener noreferrer">TailLog</a> 」
-                <a href="http://www.taillog.cn/help.html" target="_blank" rel="noopener noreferrer">v1.0.0-20171204</a>
+                © 2020「 <a href="http://www.taillog.cn/" target="_blank" rel="noopener noreferrer">TailLog</a> 」
+                <a href="http://www.taillog.cn/help.html" target="_blank" rel="noopener noreferrer">v2.0.0-20201105</a>
             </Col>
             <Col span={4}/>
             <Col span={4}>
