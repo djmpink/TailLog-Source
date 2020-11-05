@@ -84,11 +84,7 @@ class SSH extends Component {
             }
             const path = treeNode.props.dataRef.key + '/';
             let values = {
-                ip: ssh.ip,
-                port: ssh.port,
-                username: ssh.username,
-                password: ssh.password,
-                name: ssh.name,
+                ...ssh,
                 path: "/" + path
             };
             let _treeNode = treeNode;
@@ -133,11 +129,7 @@ class SSH extends Component {
             return;
         }
         let values = {
-            ip: ssh.ip,
-            port: ssh.port,
-            username: ssh.username,
-            password: ssh.password,
-            name: ssh.name,
+            ...ssh,
             path: path
         };
         fetch(url, {

@@ -198,6 +198,7 @@ const webServer = function () {
                 });
             });
         }).on('error', function (err) {
+            console.error(err);
             res.send({
                 "msg": "error",
                 "result": false,
