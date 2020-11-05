@@ -1,3 +1,4 @@
+
 let express = require('express');
 let Client = require('ssh2').Client;
 let bodyParser = require('body-parser');
@@ -22,15 +23,6 @@ app.use(bodyParser.urlencoded({
 
 
 
-
-console.log("here")
-// todo: test only
-// fs.readFile('C:\\Users\\cg001\\Documents\\tin-key.pub',{encoding:'utf-8'},((err, data) => {
-//     console.log(err,data)
-// }));
-
-
-
 const getConnectParams = function (query){
     const {privateKey, passphrase} = query;
     let params = {
@@ -49,6 +41,10 @@ const getConnectParams = function (query){
     }
     return params;
 }
+
+
+
+
 
 //业务服务程序，提供配置信息的增删改查
 const webServer = function () {

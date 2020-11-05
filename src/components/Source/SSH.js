@@ -41,14 +41,14 @@ class SSH extends Component {
 
     getAllData = ()=>{
         let formData = Object.assign({}, this.state);
-        const {ip,port, username, name, password, privateKey, passphrase} = formData;
+        const {ip,port, username, name, password, privateKey, passphrase, loginType} = formData;
         let values = {
             ip,
             port: port || '22', //ssh默认使用22端口
             username,
             name,
+            loginType,
         };
-        const {loginType} = this.state;
         // 密码方式登陆才存密码，否则存储的是userKey
         if(loginType === 'password'){
             values.password = password;
@@ -214,6 +214,7 @@ class SSH extends Component {
                                                     type={"text"}
                                                     placeholder={"请复制私钥的完整路径到此处"}
                                                     onChange={this.handleInputChange.bind(this, 'privateKey')}
+                                                    value={this.state.privateKey}
 
                                                 />
                                                 <Input
@@ -221,6 +222,7 @@ class SSH extends Component {
                                                     type={'password'}
                                                     placeholder={'请输入私钥的密码，如果未设置，请留空'}
                                                     onChange={this.handleInputChange.bind(this,'passphrase')}
+                                                    value={this.state.passphrase}
                                                 />
                                             </>
 

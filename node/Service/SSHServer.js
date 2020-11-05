@@ -20,14 +20,18 @@ const sshServer = function (app) {
     app.post(SSH_URL + ':id/edit', function (req, res) {
         let ssh = req.body;
         let id = req.params.id;
+        const {ip, port,username, password,name,privateKey,passphrase,loginType} = ssh;
 
         db.t_ssh.update({id: id, isValid: true}, {
             $set: {
-                ip: ssh.ip,
-                port: ssh.port,
-                username: ssh.username,
-                password: ssh.password,
-                name: ssh.name,
+                ip,
+                port,
+                username,
+                password,
+                name,
+                privateKey,
+                passphrase,
+                loginType,
                 modifyTime: new Date().getTime()
             }
         }, (err, doc) => {
