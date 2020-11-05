@@ -3,12 +3,13 @@ import {connect} from "react-redux";
 import { EyeOutlined, LinkOutlined, SaveOutlined } from '@ant-design/icons';
 import { Form } from '@ant-design/compatible';
 import '@ant-design/compatible/assets/index.css';
-import { Button, Card, Col, Input, message, Row, Spin, Tooltip } from "antd";
+import {Button, Card, Col, Input, message, Radio, Row, Spin, Tooltip} from "antd";
 import AjaxAction from "../../actions/AjaxAction";
 
 const FormItem = Form.Item;
 const defaultState = {
-    loading: false
+    loading: false,
+    loginType:'password', // 登陆方式: password privateKey
 };
 
 class SSH extends Component {
@@ -18,8 +19,16 @@ class SSH extends Component {
         // 初始状态
         this.state = {
             ...defaultState,
-            ...props.ssh
+            ...props.ssh,
+
         };
+    }
+
+    loginTypeChange = (e)=>{
+        const {value} = e.target;
+        this.setState({
+            loginType: value,
+        })
     }
 
     handleInputChange = (key, event) => {
@@ -30,17 +39,30 @@ class SSH extends Component {
         });
     };
 
+    getAllData = ()=>{
+        let formData = Object.assign({}, this.state);
+        const {ip,port, username, name, password, privateKey, passphrase} = formData;
+        let values = {
+            ip,
+            port: port || '22', //ssh默认使用22端口
+            username,
+            name,
+        };
+        const {loginType} = this.state;
+        // 密码方式登陆才存密码，否则存储的是userKey
+        if(loginType === 'password'){
+            values.password = password;
+        }else if(loginType === 'privateKey'){
+            values.privateKey = privateKey;
+            passphrase && (values.passphrase = passphrase);
+        }
+        return values;
+    }
+
     handleTestSSH = () => {
         let {dispatch} = this.props;
 
-        let formData = Object.assign({}, this.state);
-        let values = {
-            ip: formData.ip,
-            port: formData.port,
-            username: formData.username,
-            password: formData.password,
-            name: formData.name
-        };
+        const values = this.getAllData();
 
         this.setState({loading: true}, () => {
             dispatch(AjaxAction.sshConnect(values)).then((data) => {
@@ -68,17 +90,7 @@ class SSH extends Component {
             message.warn("IP 不能为空", 3);
             return;
         }
-        if (!formData.port || formData.port === "") {
-            message.warn("端口 不能为空", 3);
-            return;
-        }
-        let values = {
-            ip: formData.ip,
-            port: formData.port,
-            username: formData.username,
-            password: formData.password,
-            name: formData.name
-        };
+        const values = this.getAllData();
 
         if (ssh.id) {
             dispatch(AjaxAction.configSSHEdit(ssh.id, values)).then((data) => {
@@ -168,7 +180,18 @@ class SSH extends Component {
                                     </Col>
                                     <Col span={12}>
                                         <FormItem>
+                                            <div>
+                                                <Radio.Group onChange={this.loginTypeChange} value={this.state.loginType}>
+                                                    <Radio value={'password'}>
+                                                        密码
+                                                    </Radio>
+                                                    <Radio value={'privateKey'}>
+                                                        用户私钥
+                                                    </Radio>
+                                                </Radio.Group>
+                                            </div>
 
+                                            {this.state.loginType === 'password' &&
                                             <Input
                                                 id="password"
                                                 addonBefore="密码"
@@ -182,6 +205,28 @@ class SSH extends Component {
                                                         <EyeOutlined style={{color: '#888'}} />
                                                     </Tooltip>}
                                             />
+                                            }
+                                            {this.state.loginType === 'privateKey' &&
+                                            <>
+
+                                                <Input
+                                                    addonBefore={'用户私钥'}
+                                                    type={"text"}
+                                                    placeholder={"请复制私钥的完整路径到此处"}
+                                                    onChange={this.handleInputChange.bind(this, 'privateKey')}
+
+                                                />
+                                                <Input
+                                                    addonBefore={'私钥密码'}
+                                                    type={'password'}
+                                                    placeholder={'请输入私钥的密码，如果未设置，请留空'}
+                                                    onChange={this.handleInputChange.bind(this,'passphrase')}
+                                                />
+                                            </>
+
+                                            }
+
+
 
                                         </FormItem>
                                     </Col>

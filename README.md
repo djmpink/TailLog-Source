@@ -151,3 +151,7 @@ QQ交流群：455735429
 [CoolGuy](https://github.com/coolguy001tv/)
 
 
+## todo list
+* privateKey 登录 （目前已经实现可以测试OK，不过没有正常记录相关信息）
+* win上直接复制路径时会有特殊字符\8234，考虑如何去掉
+

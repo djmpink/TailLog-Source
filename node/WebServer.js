@@ -23,6 +23,32 @@ app.use(bodyParser.urlencoded({
 
 
 
+console.log("here")
+// todo: test only
+// fs.readFile('C:\\Users\\cg001\\Documents\\tin-key.pub',{encoding:'utf-8'},((err, data) => {
+//     console.log(err,data)
+// }));
+
+
+
+const getConnectParams = function (query){
+    const {privateKey, passphrase} = query;
+    let params = {
+        host: query.ip + "",
+        port: Number(query.port),
+        username: query.username + "",
+        // password: query.password + ""
+    }
+    // 目前privateKey只是一个路径，需要解析
+    if(privateKey){
+        params.privateKey = fs.readFileSync(privateKey);
+        passphrase && (params.passphrase = passphrase);
+
+    }else {
+        params.password= query.password + ""
+    }
+    return params;
+}
 
 //业务服务程序，提供配置信息的增删改查
 const webServer = function () {
@@ -140,6 +166,7 @@ const webServer = function () {
         let conn = new Client();
         let query = req.body;
 
+
         conn.on('ready', function () {
             res.send({
                 "msg": "success",
@@ -147,17 +174,13 @@ const webServer = function () {
                 "data": true
             });
         }).on('error', function (err) {
+            console.warn(err);
             res.send({
                 "msg": "error",
                 "result": false,
                 "data": false
             });
-        }).connect({
-            host: query.ip + "",
-            port: Number(query.port),
-            username: query.username + "",
-            password: query.password + ""
-        });
+        }).connect(getConnectParams(query));
     });
 
     //接口：获取服务器文件目录
@@ -184,12 +207,7 @@ const webServer = function () {
                 "result": false,
                 "data": false
             });
-        }).connect({
-            host: query.ip + "",
-            port: Number(query.port),
-            username: query.username + "",
-            password: query.password + ""
-        });
+        }).connect(getConnectParams(query));
     });
 
 };
