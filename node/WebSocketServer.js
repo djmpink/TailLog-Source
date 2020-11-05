@@ -1,5 +1,6 @@
 let Client = require('ssh2').Client;
 let websocket = require("nodejs-websocket");
+const {getConnectParams} =require('./common');
 
 //ssh连接，通过WebSocket实时传输日志信息
 const webSocketServer = function () {
@@ -15,12 +16,7 @@ const webSocketServer = function () {
             }
 
             let conn = new Client();
-            conn.connect({
-                host: ssh.ip + "",
-                port: Number(ssh.port),
-                username: ssh.username + "",
-                password: ssh.password + ""
-            });
+            conn.connect(getConnectParams(ssh));
 
             conn.on('ready', function () {
                 console.log('===>  connection ready');
