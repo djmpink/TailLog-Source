@@ -189,7 +189,7 @@ class Term extends React.Component {
             });
             term._initialized = true;
         }
-        term.open(terminalContainer);
+        term.open(terminalContainer, true);
         term.fit();
     };
 

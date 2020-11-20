@@ -4,6 +4,7 @@ let bodyParser = require('body-parser');
 let websocket = require("nodejs-websocket");
 const TextDecoder = require('text-encoding').TextDecoder;
 let app = express();
+const {getConnectParams} =require('./common');
 
 app.use(bodyParser.json({limit: '1mb'}));  //这里指定参数使用 json 格式
 app.use(bodyParser.urlencoded({
@@ -30,12 +31,7 @@ const termSSH = function () {
         termCols = query.cols;
         termRows = query.rows;
         conn.end();
-        conn.connect({
-            host: query.ip + "",
-            port: Number(query.port),
-            username: query.username + "",
-            password: query.password + ""
-        });
+        conn.connect(getConnectParams(query));
 
         conn.on('ready', function () {
             console.log("===> connection ready");
