@@ -213,12 +213,6 @@ class AgentList extends React.Component {
                                 dataSource={this.props.agentList}
                                 pagination={this.state.pagination}
                                 onChange={this.handleTableChange}
-                                onRow={record=>{
-                                    return {
-                                        onDoubleClick:event=>this.monitorLog(record)
-                                    }
-                                }}
-
                             />
                         </div>
                         {

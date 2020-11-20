@@ -22,6 +22,7 @@ class SSH extends Component {
             ...props.ssh,
 
         };
+        console.log(this.state, props.ssh)
     }
 
     loginTypeChange = (e)=>{

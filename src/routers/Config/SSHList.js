@@ -224,11 +224,6 @@ class SSHList extends React.Component {
                                 dataSource={this.props.sshList}
                                 pagination={this.state.pagination}
                                 onChange={this.handleTableChange}
-                                onRow={record=>{
-                                    return {
-                                        onDoubleClick:event=>this.monitorLog(record)
-                                    }
-                                }}
                             />
                         </div>
                         {
