@@ -63,7 +63,7 @@ QQ交流群：455735429
     * electron环境
         * 请全局安装electron：正常情况下应该直接执行`npm i -g electron`或`yarn global add electron`，但是因为国内环境问题，可以参考上文的electron加速部分设置后重新执行
         ，或者参考[electron官网的安装章节](https://github.com/electron/electron/blob/master/docs/tutorial/installation.md) ，
-        否则参考下面的步骤（以win为例）[不推荐]， 注意，以下方案当前时间节点上已经不能保证是否OK：
+        否则参考下面的步骤（以win为例）[不推荐]， 注意，以下方案当前时间节点(2020.12)上已经不能保证是否OK：
         
         1. 使用[淘宝镜像](https://npm.taobao.org/mirrors/electron/) 找到适合自己的版本：
             
@@ -98,7 +98,7 @@ QQ交流群：455735429
 3. 第二个命令行窗口执行：`npm run et`
 
 ## 打包成客户端
-1. package.json中设置：`"DEV": false,`
+1. package.json中设置：`"DEV": false,`，注意，请确保该参数是true，否则会加载localhost:3000/
 2. 命令行执行：`npm run build`
 3. 打包
     * mac:
