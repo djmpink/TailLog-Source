@@ -11,7 +11,10 @@ body {
     background: transparent;
   }
   .ant-table-tbody > tr.ant-table-row:hover > td{
-    background-color: #7289da;
+    background-color: rgba(148, 165, 227, 0.35);
+  }
+  .ant-table-tbody > tr.ant-table-placeholder:hover > td{
+    background-color: transparent;
   }
   .ant-tooltip-inner{
     background-color: #3e4662;

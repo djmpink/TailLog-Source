@@ -1,187 +1,189 @@
 //弹出框，文件夹
-.ant-modal-content{
-  background: #3e434e;
-}
-.ant-modal-header{
-  background: #3e434e;
-  border-bottom: 1px solid #343842;
-}
-.ant-modal-footer{
-  border-top: 1px solid #343842;
-}
-.ant-modal-title{
-  color: #ccc;
-}
-.ant-tree li .ant-tree-node-content-wrapper{
-  color: #ccc;
-}
-.ant-modal-body{
-  height: 300px;
-  overflow: auto;
-}
-.ant-modal-close-x{
-  color: #ccc;
-}
-:root .ant-tree li span.ant-tree-switcher.ant-tree-switcher_close:after{
-  color: #5e71c2;
-}
-:root .ant-tree li span.ant-tree-switcher.ant-tree-switcher_open:after{
-  color: #ccc;
-}
-.ant-tree li .ant-tree-node-content-wrapper:hover {
-  background-color: #343842;
-}
-.ant-tree li span.ant-tree-icon_loading{
-  background: #3e434e;
-}
-//=====
-.card-container > .ant-tabs-card > .ant-tabs-content {
-  margin-top: -16px;
-  padding: 0;
-  border-left: 0;
-  margin-right: 5%;
-  > .ant-tabs-tabpane {
-    background: #343842;
-    padding: 20px 50px 40px;
-
+body{
+  .ant-modal-content{
+    background: #3e434e;
   }
-}
-
-.ant-tabs-vertical.ant-tabs-card.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
-  border-radius: 0;
-}
-
-.card-container > .ant-tabs-card > .ant-tabs-bar {
-  border-color: #343842;
-  .ant-tabs-tab {
-    border-color: transparent;
-    background: transparent;
-    color: #888;
-    height: 50px;
-    text-align: center;
-    padding-top: 15px;
-    margin-bottom: 0;
-  }
-  .ant-tabs-tab-active {
-    border-color: #343842;
-    background: #343842;
-    color: #ccc;
-    border-left: 1px solid #94a5e3;
-  }
-}
-
-.ant-card {
-  //text-align:center;
-  .ant-card-head { //卡片效果
-    height: 40px;
-    background: #343842;
+  .ant-modal-header{
+    background: #3e434e;
     border-bottom: 1px solid #343842;
-    border-radius: 0;
-    .ant-card-head-title { //卡片头部字体效果
-      color: #7889da;
-      font-size: 16px;
-      margin-top: 5px;
+  }
+  .ant-modal-footer{
+    border-top: 1px solid #343842;
+  }
+  .ant-modal-title{
+    color: #ccc;
+  }
+  .ant-tree li .ant-tree-node-content-wrapper{
+    color: #ccc;
+  }
+  .ant-modal-body{
+    height: 300px;
+    overflow: auto;
+  }
+  .ant-modal-close-x{
+    color: #ccc;
+  }
+  :root .ant-tree li span.ant-tree-switcher.ant-tree-switcher_close:after{
+    color: #5e71c2;
+  }
+  :root .ant-tree li span.ant-tree-switcher.ant-tree-switcher_open:after{
+    color: #ccc;
+  }
+  .ant-tree li .ant-tree-node-content-wrapper:hover {
+    background-color: #343842;
+  }
+  .ant-tree li span.ant-tree-icon_loading{
+    background: #3e434e;
+  }
+  //=====
+  .card-container > .ant-tabs-card > .ant-tabs-content {
+    margin-top: -16px;
+    padding: 0;
+    border-left: 0;
+    margin-right: 5%;
+    > .ant-tabs-tabpane {
+      background: #343842;
+      padding: 20px 50px 40px;
+
     }
   }
-  .ant-card-body {
-    padding-bottom: 0;
+
+  .ant-tabs-vertical.ant-tabs-card.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
+    border-radius: 0;
   }
-}
 
-/* 卡片 hover 效果 */
-.ant-card:not(.ant-card-no-hovering):hover {
-  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 5px 23px rgba(0, 0, 0, 0.4);
-  border-color: transparent;
-  border-Top: 1px solid #7889da;
-}
+  .card-container > .ant-tabs-card > .ant-tabs-bar {
+    border-color: #343842;
+    .ant-tabs-tab {
+      border-color: transparent;
+      background: transparent;
+      color: #888;
+      height: 50px;
+      text-align: center;
+      padding-top: 15px;
+      margin-bottom: 0;
+    }
+    .ant-tabs-tab-active {
+      border-color: #343842;
+      background: #343842;
+      color: #ccc;
+      border-left: 1px solid #94a5e3;
+    }
+  }
 
-.ant-steps {
-  padding: 0 150px;
-  .ant-steps-head {
+  .ant-card {
+    //text-align:center;
+    .ant-card-head { //卡片效果
+      height: 40px;
+      background: #343842;
+      border-bottom: 1px solid #343842;
+      border-radius: 0;
+      .ant-card-head-title { //卡片头部字体效果
+        color: #7889da;
+        font-size: 16px;
+        margin-top: 5px;
+      }
+    }
+    .ant-card-body {
+      padding-bottom: 0;
+    }
+  }
+
+  /* 卡片 hover 效果 */
+  .ant-card:not(.ant-card-no-hovering):hover {
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 23px rgba(0, 0, 0, 0.4);
+    border-color: transparent;
+    border-Top: 1px solid #7889da;
+  }
+
+  .ant-steps {
+    padding: 0 150px;
+    .ant-steps-head {
+      background: #292c34;
+    }
+  }
+
+  .ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-title {
     background: #292c34;
+    color: #cccccc;
   }
-}
 
-.ant-steps .ant-steps-item.ant-steps-status-process .ant-steps-title {
-  background: #292c34;
-  color: #cccccc;
-}
-
-.ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-title {
-  background: #292c34;
-  color: #cccccc;
-}
-
-.ant-steps .ant-steps-item.ant-steps-status-finish .ant-steps-title {
-  background: #292c34;
-  color: #cccccc;
-}
-
-.ant-form-item {
-  margin-bottom: 35px;
-  .ant-form-item-label label {
-    color: #7889da
+  .ant-steps .ant-steps-item.ant-steps-status-wait .ant-steps-title {
+    background: #292c34;
+    color: #cccccc;
   }
-}
 
-/*input 样式*/
-.ant-select-auto-complete.ant-select .ant-input {
-  border-width: 0;
-  background-color: #3e434e;
-}
-
-.ant-input-group-wrapper {
-  display: block;
-  vertical-align: top;
-}
-
-.ant-input-group-addon {
-  color: #888;
-  background-color: #343842;
-  border: 1px solid #3e434e;
-  min-width: 60px;
-}
-
-.config-form-input {
-  color: #ccc;
-  font-size: 14px;
-  background-color: #3e434e;
-  border-width: 0;
-  &::placeholder {
-    color: #555;
+  .ant-steps .ant-steps-item.ant-steps-status-finish .ant-steps-title {
+    background: #292c34;
+    color: #cccccc;
   }
-}
 
-.ant-upload.ant-upload-drag {
-  width: 90%;
-  height: 90%;
-}
+  .ant-form-item {
+    margin-bottom: 35px;
+    .ant-form-item-label label {
+      color: #7889da
+    }
+  }
 
-.config-back-image {
-  width: 200px;
-  height: 200px;
-  background: url('./images/pig.png') no-repeat;
-  background-size: contain;
-  opacity: 0.5;
-}
+  /*input 样式*/
+  .ant-select-auto-complete.ant-select .ant-input {
+    border-width: 0;
+    background-color: #3e434e;
+  }
 
-//.steps-content {
-//  margin-top: 10px;
-//  //border: 1px dashed #7889da;
-//  //border-radius: 5px;
-//  background-color: #292c34;
-//  min-height: 200px;
-//  text-align: center;
-//  padding-top: 50px;
-//  padding-bottom: 50px;
-//}
-//
-//.steps-action {
-//  margin-top: 40px;
-//
-//}
+  .ant-input-group-wrapper {
+    display: block;
+    vertical-align: top;
+  }
 
-.line {
-  text-align: center;
+  .ant-input-group-addon {
+    color: #888;
+    background-color: #343842;
+    border: 1px solid #3e434e;
+    min-width: 60px;
+  }
+
+  .config-form-input {
+    color: #ccc;
+    font-size: 14px;
+    background-color: #3e434e;
+    border-width: 0;
+    &::placeholder {
+      color: #555;
+    }
+  }
+
+  .ant-upload.ant-upload-drag {
+    width: 90%;
+    height: 90%;
+  }
+
+  .config-back-image {
+    width: 200px;
+    height: 200px;
+    background: url('./images/pig.png') no-repeat;
+    background-size: contain;
+    opacity: 0.5;
+  }
+
+  //.steps-content {
+  //  margin-top: 10px;
+  //  //border: 1px dashed #7889da;
+  //  //border-radius: 5px;
+  //  background-color: #292c34;
+  //  min-height: 200px;
+  //  text-align: center;
+  //  padding-top: 50px;
+  //  padding-bottom: 50px;
+  //}
+  //
+  //.steps-action {
+  //  margin-top: 40px;
+  //
+  //}
+
+  .line {
+    text-align: center;
+  }
 }

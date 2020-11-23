@@ -1,91 +1,93 @@
-.ant-card-bordered {
 
-  border: 1px solid #2e313a;
-  border-top-color: #7289da;
-}
+body{
+  .ant-card-bordered {
 
-.ant-input-group-addon {
-  color: #94a5e3;
-}
-
-.login-div {
-  .login-badge{
-    .ant-badge-status-processing{
-      background-color: #ffbf00;
-    }
+    border: 1px solid #2e313a;
+    border-top-color: #7289da;
   }
-  //border: 1px solid #ccc;
-  padding: 20px 40px 40px 40px;
-  width: 550px;
-  margin: 10% auto;
-  background: #2e313a;
-  h1 {
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 40px;
+  .ant-input-group-addon {
     color: #94a5e3;
   }
-  h2 {
-    font-size: 16px;
-    text-align: center;
 
-  }
-  color: #555;
-  .remember {
-    height: 48px;
-    align-items: center;
-    svg:first-child {
-      fill: #666 !important; //hack
+  .login-div {
+    .login-badge{
+      .ant-badge-status-processing{
+        background-color: #ffbf00;
+      }
+    }
+    //border: 1px solid #ccc;
+    padding: 20px 40px 40px 40px;
+    width: 550px;
+    margin: 10% auto;
+    background: #2e313a;
+    h1 {
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #94a5e3;
+    }
+    h2 {
+      font-size: 16px;
+      text-align: center;
+
+    }
+    color: #555;
+    .remember {
+      height: 48px;
+      align-items: center;
+      svg:first-child {
+        fill: #666 !important; //hack
+      }
+    }
+    .link {
+      cursor: pointer;
+      text-decoration: underline;
+      color: #999;
+      margin-left: 10px;
+    }
+    .btn-wrapper {
+      margin-top: 15px;
+    }
+    .reg {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .pwd {
+      flex: 1;
+      text-align: right;
+    }
+    .third-login {
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      p {
+        margin-bottom: 15px;
+      }
+    }
+    .icon-qq {
+      background: url("./images/qq.png") no-repeat;
+      background-size: contain;
+    }
+    .icon-weixin {
+      background: url("./images/weixin.png") no-repeat;
+      background-size: contain;
+    }
+    .icon {
+      display: inline-block;
+      flex: 1;
+      height: 40px;
+      width: 40px;
+      background-position: center center;
+      cursor: pointer;
+    }
+    .third-login-i-wrapper {
+      width: 200px;
+      margin: 0 auto;
+      display: flex;
     }
   }
-  .link {
-    cursor: pointer;
-    text-decoration: underline;
-    color: #999;
-    margin-left: 10px;
-  }
-  .btn-wrapper {
-    margin-top: 15px;
-  }
-  .reg {
-    margin: 20px 0;
-    text-align: center;
-  }
-  .pwd {
-    flex: 1;
-    text-align: right;
-  }
-  .third-login {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    p {
-      margin-bottom: 15px;
-    }
-  }
-  .icon-qq {
-    background: url("./images/qq.png") no-repeat;
-    background-size: contain;
-  }
-  .icon-weixin {
-    background: url("./images/weixin.png") no-repeat;
-    background-size: contain;
-  }
-  .icon {
-    display: inline-block;
-    flex: 1;
-    height: 40px;
-    width: 40px;
-    background-position: center center;
-    cursor: pointer;
-  }
-  .third-login-i-wrapper {
-    width: 200px;
-    margin: 0 auto;
-    display: flex;
-  }
-}
 
-.flex-row {
-  flex-direction: row;
+  .flex-row {
+    flex-direction: row;
+  }
 }
