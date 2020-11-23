@@ -7,6 +7,12 @@ body {
     margin: 0 8px;
     color: #94a5e3;
   }
+  .ant-table{
+    background: transparent;
+  }
+  .ant-table-tbody > tr.ant-table-row:hover > td{
+    background-color: #7289da;
+  }
   .ant-tooltip-inner{
     background-color: #3e4662;
     color: #aaaaaa;
