@@ -21,12 +21,13 @@ const styles = {
 
 const props = {
     name: 'file',
+    multiple: true,
     action: '//jsonplaceholder.typicode.com/posts/',
     headers: {
         authorization: 'authorization-text',
     },
     onChange(info) {
-        const hide = message.loading('导入配置信心，请稍后...', 0);
+        const hide = message.loading('导入配置信息，请稍后...', 0);
         setTimeout(hide, 1000);
         if (info.file.status !== 'uploading') {
             console.log(info.file, info.fileList);
